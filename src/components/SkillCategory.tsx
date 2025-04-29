@@ -11,13 +11,15 @@ export default function SkillCategory({
 }: SkillCategoryProps) {
   return (
     <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors group">
-      <div className="flex items-center gap-3 mb-4">
+      <div className="flex items-center gap-3 mb-8">
         <div className="text-blue-400 group-hover:text-blue-300 transition-colors">
           {icon}
         </div>
-        <h3 className="text-xl font-bold">{title}</h3>
+        <h3 id="category-title" className="text-xl font-bold">
+          {title}
+        </h3>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div id="skills-list" className="flex flex-wrap gap-2">
         {skills.map((skill) => (
           <span
             key={skill}

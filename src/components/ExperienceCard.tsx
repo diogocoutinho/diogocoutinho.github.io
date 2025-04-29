@@ -47,7 +47,7 @@ export default function ExperienceCard({
 
           <div className="mb-4">
             <h4 className="font-semibold mb-2">Stacks:</h4>
-            <div className="flex flex-wrap gap-2">
+            <div id="stacks" className="flex flex-wrap gap-2">
               {stacks.map((stack) => (
                 <span
                   key={stack}

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Card from "./Card";
 
 interface EducationProps {
   institution: string;
@@ -20,7 +21,7 @@ export default function EducationCard({
   logoUrl,
 }: EducationProps) {
   return (
-    <div className="bg-gray-800 p-6 rounded-lg shadow-lg hover:bg-gray-700 transition-colors">
+    <Card>
       <div className="flex items-start gap-4">
         {logoUrl && (
           <div className="flex-shrink-0">
@@ -34,15 +35,25 @@ export default function EducationCard({
           </div>
         )}
         <div className="flex-grow">
-          <h3 className="text-xl font-bold mb-2">{institution}</h3>
-          <p className="text-blue-400 font-medium mb-1">{degree}</p>
-          <p className="text-gray-400 text-sm mb-1">{duration}</p>
-          <p className="text-gray-400 text-sm mb-2">{location}</p>
+          <h3 id="institution" className="text-xl font-bold mb-2">
+            {institution}
+          </h3>
+          <p id="degree" className="text-blue-400 font-medium mb-1">
+            {degree}
+          </p>
+          <p id="duration" className="text-gray-400 text-sm mb-1">
+            {duration}
+          </p>
+          <p id="location" className="text-gray-400 text-sm mb-2">
+            {location}
+          </p>
           {description && (
-            <p className="text-gray-300 text-sm">{description}</p>
+            <p id="description" className="text-gray-300 text-sm">
+              {description}
+            </p>
           )}
         </div>
       </div>
-    </div>
+    </Card>
   );
 }

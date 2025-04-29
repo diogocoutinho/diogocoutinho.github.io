@@ -4,25 +4,25 @@ import Link from "next/link";
 interface ProjectCardProps {
   title: string;
   description: string;
-  imageUrl: string;
   technologies: string[];
   githubUrl: string;
   liveUrl: string | null;
+  imageUrl?: string | null;
 }
 
 export default function ProjectCard({
   title,
   description,
-  imageUrl,
   technologies,
   githubUrl,
   liveUrl,
+  imageUrl,
 }: ProjectCardProps) {
   return (
     <div className="group relative bg-gray-800 rounded-lg overflow-hidden transition-transform duration-300 hover:-translate-y-2">
       <div className="relative h-48">
         <Image
-          src={imageUrl}
+          src={imageUrl || "/file.svg"}
           alt={title}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-300"
