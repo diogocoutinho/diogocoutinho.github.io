@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface EducationProps {
   institution: string;
   degree: string;
@@ -20,10 +22,12 @@ export default function EducationCard({
       <div className="flex items-start gap-4">
         {logoUrl && (
           <div className="flex-shrink-0">
-            <img
+            <Image
               src={logoUrl}
               alt={`${institution} logo`}
               className="w-16 h-16 rounded-lg object-cover"
+              width={64}
+              height={64}
             />
           </div>
         )}
