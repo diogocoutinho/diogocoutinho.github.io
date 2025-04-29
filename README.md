@@ -90,4 +90,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar
 
 - GitHub: [@diogocoutinho](https://github.com/diogocoutinho)
 - LinkedIn: [Diogo Coutinho](https://linkedin.com/in/diogoccoutinho)
-- Email: [seu-email@exemplo.com](mailto:seu-email@exemplo.com)
+- Email: [diogo.coutinho.ads@gmail.com](mailto:diogo.coutinho.ads@gmail.com)
