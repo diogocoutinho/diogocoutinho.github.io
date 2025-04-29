@@ -55,6 +55,22 @@ yarn dev
 
 4. Acesse [http://localhost:3000](http://localhost:3000)
 
+## 📦 Deploy para GitHub Pages
+
+1. Certifique-se de que o repositório está configurado para GitHub Pages:
+
+   - Vá para Settings > Pages
+   - Selecione a branch `gh-pages` como fonte
+   - O site estará disponível em `https://diogocoutinho.github.io`
+
+2. Execute o comando de deploy:
+
+```bash
+npm run deploy
+# ou
+yarn deploy
+```
+
 ## 📁 Estrutura do Projeto
 
 ```
