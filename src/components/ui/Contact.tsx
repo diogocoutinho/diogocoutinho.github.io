@@ -1,3 +1,5 @@
+"use client";
+
 interface ContactProps {
   onSubmit: (data: { name: string; email: string; message: string }) => void;
 }

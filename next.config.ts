@@ -9,6 +9,9 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  experimental: {
+    optimizePackageImports: ["tailwindcss"],
+  },
 };
 
 export default nextConfig;
