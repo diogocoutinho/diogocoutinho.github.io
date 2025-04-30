@@ -1,24 +1,26 @@
 1:"$Sreact.fragment"
-2:I[881,["930","static/chunks/164f4fb6-b436257a1aad6a6a.js","531","static/chunks/531-df1e3c04a0caeec7.js","259","static/chunks/259-7b596f86cee26ad8.js","177","static/chunks/app/layout-a16bdc660f755b33.js"],"Providers"]
-3:I[7555,[],""]
-4:I[1295,[],""]
-5:I[894,[],"ClientPageRoot"]
-6:I[405,["930","static/chunks/164f4fb6-b436257a1aad6a6a.js","531","static/chunks/531-df1e3c04a0caeec7.js","537","static/chunks/537-d18975e59c754d28.js","259","static/chunks/259-7b596f86cee26ad8.js","974","static/chunks/app/page-2a51806d2eb8ec85.js"],"default"]
-9:I[9665,[],"MetadataBoundary"]
-b:I[9665,[],"OutletBoundary"]
-e:I[4911,[],"AsyncMetadataOutlet"]
-10:I[9665,[],"ViewportBoundary"]
-12:I[6614,[],""]
+3:I[894,[],"ClientPageRoot"]
+4:I[3792,["930","static/chunks/164f4fb6-b436257a1aad6a6a.js","361","static/chunks/361-37cc1414180f435e.js","537","static/chunks/537-d18975e59c754d28.js","259","static/chunks/259-e309ddb8a47b9431.js","345","static/chunks/345-97ecd5b83517d939.js","974","static/chunks/app/page-a22d7d3e7d2bda4d.js"],"default"]
+7:I[9665,[],"MetadataBoundary"]
+9:I[9665,[],"OutletBoundary"]
+c:I[4911,[],"AsyncMetadataOutlet"]
+e:I[9665,[],"ViewportBoundary"]
+10:I[6614,[],""]
 :HL["/_next/static/media/a34f9d1faa5f3315-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/_next/static/css/fc4de5cf991b3b69.css","style"]
-0:{"P":null,"b":"-LsE0O4bnArxk5kTcb3Pp","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/fc4de5cf991b3b69.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"pt-BR","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__className_d65c78 bg-white dark:bg-gray-900 text-gray-900 dark:text-white","children":["$","$L2",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L5",null,{"Component":"$6","searchParams":{},"params":{},"promises":["$@7","$@8"]}],["$","$L9",null,{"children":"$La"}],null,["$","$Lb",null,{"children":["$Lc","$Ld",["$","$Le",null,{"promise":"$@f"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","mKAbI5ywjSfv2NXy77z6B",{"children":[["$","$L10",null,{"children":"$L11"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$12","$undefined"],"s":false,"S":true}
-13:"$Sreact.suspense"
-14:I[4911,[],"AsyncMetadata"]
-7:{}
-8:{}
-a:["$","$13",null,{"fallback":null,"children":["$","$L14",null,{"promise":"$@15"}]}]
-d:null
-11:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
-c:null
-15:{"metadata":[["$","title","0",{"children":"Diogo Coutinho - Desenvolvedor Full Stack"}],["$","meta","1",{"name":"description","content":"Portfólio e currículo de Diogo Coutinho, desenvolvedor Full Stack"}]],"error":null,"digest":"$undefined"}
-f:{"metadata":"$15:metadata","error":null,"digest":"$undefined"}
+:HL["/_next/static/css/13bec744017970ad.css","style"]
+0:{"P":null,"b":"SC-rHI0ruUCB-icIhDffr","p":"","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/13bec744017970ad.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],"$L2"]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L3",null,{"Component":"$4","searchParams":{},"params":{},"promises":["$@5","$@6"]}],["$","$L7",null,{"children":"$L8"}],null,["$","$L9",null,{"children":["$La","$Lb",["$","$Lc",null,{"promise":"$@d"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,["$","$1","phrlq2ipjFBDbt4FllrkW",{"children":[["$","$Le",null,{"children":"$Lf"}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],null]}],false]],"m":"$undefined","G":["$10","$undefined"],"s":false,"S":true}
+11:"$Sreact.suspense"
+12:I[4911,[],"AsyncMetadata"]
+14:I[6178,["930","static/chunks/164f4fb6-b436257a1aad6a6a.js","361","static/chunks/361-37cc1414180f435e.js","259","static/chunks/259-e309ddb8a47b9431.js","177","static/chunks/app/layout-2079d65590b3380c.js"],"I18nProviderClient"]
+15:I[881,["930","static/chunks/164f4fb6-b436257a1aad6a6a.js","361","static/chunks/361-37cc1414180f435e.js","259","static/chunks/259-e309ddb8a47b9431.js","177","static/chunks/app/layout-2079d65590b3380c.js"],"Providers"]
+16:I[7555,[],""]
+17:I[1295,[],""]
+5:{}
+6:{}
+8:["$","$11",null,{"fallback":null,"children":["$","$L12",null,{"promise":"$@13"}]}]
+2:["$","html",null,{"lang":"pt-BR","suppressHydrationWarning":true,"children":["$","body",null,{"className":"__className_d65c78 bg-white dark:bg-gray-900 text-gray-900 dark:text-white","children":["$","$L14",null,{"locale":"pt-BR","children":["$","$L15",null,{"children":["$","$L16",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L17",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"className":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":404}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]}]
+b:null
+f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+a:null
+13:{"metadata":[["$","title","0",{"children":"Diogo Coutinho - Desenvolvedor Full Stack"}],["$","meta","1",{"name":"description","content":"Portfólio e currículo de Diogo Coutinho, desenvolvedor Full Stack"}]],"error":null,"digest":"$undefined"}
+d:{"metadata":"$13:metadata","error":null,"digest":"$undefined"}
