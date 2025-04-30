@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "education": "Educação",
+    "skills": "Habilidades",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "currentLocale": "pt",
+    "darkMode": "Modo Escuro",
+    "lightMode": "Modo Claro",
+    "downloadPDF": "Baixar PDF"
+  },
+  "HomePage": {
+    "portfolio": {
+      "title": "Diogo Coutinho - Portfólio",
+      "description": "Meu portfólio pessoal desenvolvido com Next.js, TypeScript e Tailwind CSS. Uma aplicação moderna e responsiva que apresenta minha trajetória profissional e projetos."
+    },
+    "hero": {
+      "title": "Diogo Coutinho",
+      "subtitle": "Desenvolvedor Full Stack",
+      "description": "Desenvolvedor apaixonado por criar soluções inovadoras e eficientes."
+    }
+  },
+  "hero": {
+    "title": "Diogo Coutinho",
+    "subtitle": "Desenvolvedor Full Stack",
+    "description": "Desenvolvedor apaixonado por criar soluções inovadoras e eficientes."
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Sou um desenvolvedor full stack com experiência em criar aplicações web modernas e escaláveis. Minha paixão é transformar ideias em realidade através do código."
+  },
+  "experience": {
+    "title": "Experiência Profissional",
+    "technologies": "Tecnologias utilizadas",
+    "responsibilities": "Principais responsabilidades"
+  },
+  "education": {
+    "title": "Formação Acadêmica"
+  },
+  "skills": {
+    "title": "Habilidades",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps",
+    "tools": "Ferramentas"
+  },
+  "projects": {
+    "title": "Projetos",
+    "viewProject": "Ver Projeto"
+  },
+  "contact": {
+    "title": "Contato",
+    "email": "Email",
+    "phone": "Telefone",
+    "location": "Localização",
+    "languages": "Idiomas",
+    "social": "Redes Sociais"
+  }
+}

@@ -10,21 +10,36 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        dark: {
-          bg: "#1a1a1a",
-          text: "#ffffff",
-          primary: "#3b82f6",
-          secondary: "#64748b",
+        primary: {
+          light: "#2563eb",
+          dark: "#60a5fa",
         },
-        light: {
-          bg: "#ffffff",
-          text: "#1a1a1a",
-          primary: "#2563eb",
-          secondary: "#475569",
+        secondary: {
+          light: "#4b5563",
+          dark: "#9ca3af",
+        },
+        background: {
+          light: "#f8fafc",
+          dark: "#0f172a",
+        },
+        surface: {
+          light: "#ffffff",
+          dark: "#1e293b",
+        },
+        text: {
+          light: "#1e293b",
+          dark: "#f1f5f9",
+        },
+        border: {
+          light: "#e2e8f0",
+          dark: "#334155",
         },
       },
+      transitionProperty: {
+        colors: "background-color, color, border-color",
+      },
       animation: {
-        "fade-in": "fadeIn 0.5s ease-in-out",
+        "fade-in": "fadeIn 0.3s ease-in-out",
         "slide-up": "slideUp 0.5s ease-out",
       },
       keyframes: {

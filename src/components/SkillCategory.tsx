@@ -10,20 +10,23 @@ export default function SkillCategory({
   icon,
 }: SkillCategoryProps) {
   return (
-    <div className="bg-gray-800 p-6 rounded-lg hover:bg-gray-700 transition-colors group">
-      <div className="flex items-center gap-3 mb-8">
-        <div className="text-blue-400 group-hover:text-blue-300 transition-colors">
+    <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg hover:shadow-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition-all duration-300 group">
+      <div className="flex items-center gap-4 mb-6">
+        <div className="text-blue-500 dark:text-blue-400 group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300 transform group-hover:scale-110">
           {icon}
         </div>
-        <h3 id="category-title" className="text-xl font-bold">
+        <h3
+          id="category-title"
+          className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-300 transition-colors duration-300"
+        >
           {title}
         </h3>
       </div>
-      <div id="skills-list" className="flex flex-wrap gap-2">
+      <div id="skills-list" className="flex flex-wrap gap-3">
         {skills.map((skill) => (
           <span
             key={skill}
-            className="px-3 py-1 bg-gray-700 rounded-full text-sm hover:bg-gray-600 transition-colors"
+            className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-full text-sm font-medium hover:bg-blue-100 dark:hover:bg-blue-900 hover:text-blue-600 dark:hover:text-blue-300 transition-all duration-300 transform hover:scale-105"
           >
             {skill}
           </span>

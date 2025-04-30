@@ -1,0 +1,61 @@
+{
+  "navigation": {
+    "about": "About",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact",
+    "currentLocale": "en",
+    "darkMode": "Dark Mode",
+    "lightMode": "Light Mode",
+    "downloadPDF": "Download PDF"
+  },
+  "HomePage": {
+    "portfolio": {
+      "title": "Diogo Coutinho - Portfolio",
+      "description": "My personal portfolio developed with Next.js, TypeScript and Tailwind CSS. A modern and responsive application that presents my professional journey and projects."
+    },
+    "hero": {
+      "title": "Diogo Coutinho",
+      "subtitle": "Full Stack Developer",
+      "description": "Developer passionate about creating innovative and efficient solutions."
+    }
+  },
+  "hero": {
+    "title": "Diogo Coutinho",
+    "subtitle": "Full Stack Developer",
+    "description": "Developer passionate about creating innovative and efficient solutions."
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I am a full stack developer with experience in creating modern and scalable web applications. My passion is turning ideas into reality through code."
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "technologies": "Technologies used",
+    "responsibilities": "Main responsibilities"
+  },
+  "education": {
+    "title": "Academic Background"
+  },
+  "skills": {
+    "title": "Skills",
+    "frontend": "Frontend",
+    "backend": "Backend",
+    "devops": "DevOps",
+    "tools": "Tools"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewProject": "View Project"
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "languages": "Languages",
+    "social": "Social Media"
+  }
+}

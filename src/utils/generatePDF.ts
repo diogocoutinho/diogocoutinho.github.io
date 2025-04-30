@@ -10,26 +10,34 @@ const getSectionContent = (
 
   // Tratamento especial para a seção de experiência
   if (sectionId === "experience") {
-    const experienceItems = section.querySelectorAll(".bg-gray-800");
+    const experienceItems = section.querySelectorAll(
+      ".bg-white.dark\\:bg-gray-900"
+    );
     const content: string[] = [];
 
     experienceItems.forEach((item) => {
-      const position = item.querySelector("h3")?.textContent?.trim() || "";
+      const position =
+        item.querySelector("h3.text-2xl")?.textContent?.trim() || "";
       const company =
-        item.querySelector("p.text-gray-400")?.textContent?.trim() || "";
-      const details =
-        item
-          .querySelector(".flex.flex-wrap.gap-2.text-sm.text-gray-400")
-          ?.textContent?.trim() || "";
+        item.querySelector("p.text-xl")?.textContent?.trim() || "";
 
-      // Extrai as stacks corretamente usando o ID específico
-      const stacks = Array.from(item.querySelectorAll("#stacks span"))
+      // Extrai período, localização e modo de trabalho
+      const details = Array.from(
+        item.querySelectorAll(".flex.flex-wrap.items-center.gap-3 span")
+      )
+        .map((span) => span.textContent?.trim())
+        .filter(Boolean);
+
+      // Extrai as stacks
+      const stacks = Array.from(
+        item.querySelectorAll(".flex.flex-wrap.gap-2 span.bg-blue-100")
+      )
         .map((span) => span.textContent?.trim())
         .filter(Boolean);
 
       // Extrai as responsabilidades
       const responsibilities = Array.from(
-        item.querySelectorAll("ul.list-disc li")
+        item.querySelectorAll("ul.space-y-2 li")
       )
         .map((li) => li.textContent?.trim())
         .filter(Boolean);
@@ -37,17 +45,19 @@ const getSectionContent = (
       // Adiciona informações da experiência formatadas
       content.push(`Empresa: ${company}`);
       content.push(`Cargo: ${position}`);
-      content.push(`Detalhes: ${details}`);
+      if (details.length > 0) {
+        content.push(`Detalhes: ${details.join(" | ")}`);
+      }
       content.push(""); // Espaço em branco
 
       if (stacks.length > 0) {
-        content.push("Stacks:");
+        content.push("Tecnologias utilizadas:");
         stacks.forEach((stack) => content.push(`• ${stack}`));
         content.push(""); // Espaço em branco
       }
 
       if (responsibilities.length > 0) {
-        content.push("Responsabilidades:");
+        content.push("Principais responsabilidades:");
         responsibilities.forEach((resp) => content.push(`• ${resp}`));
       }
 
@@ -91,20 +101,30 @@ const getSectionContent = (
 
   // Tratamento especial para a seção de habilidades
   if (sectionId === "skills") {
-    const skillCategories = section.querySelectorAll(".bg-gray-800");
+    const skillCategories = section.querySelectorAll(
+      ".bg-white.dark\\:bg-gray-900"
+    );
     const content: string[] = [];
 
     skillCategories.forEach((category) => {
+      // Pega o título da categoria
       const title =
-        category.querySelector("#category-title")?.textContent?.trim() || "";
+        category.querySelector("h3#category-title")?.textContent?.trim() || "";
+      if (!title) return; // Pula se não encontrar título
+
+      // Pega as habilidades dentro da categoria
       const skills = Array.from(category.querySelectorAll("#skills-list span"))
         .map((span) => span.textContent?.trim())
         .filter(Boolean);
 
-      // Adiciona informações das habilidades formatadas
-      content.push(title);
-      skills.forEach((skill) => content.push(`• ${skill}`));
-      content.push(""); // Espaço em branco entre categorias
+      if (skills.length > 0) {
+        // Adiciona o título da categoria
+        content.push(title);
+        // Adiciona cada habilidade com bullet
+        skills.forEach((skill) => content.push(`• ${skill}`));
+        // Adiciona espaço em branco entre categorias
+        content.push("");
+      }
     });
 
     return { title, content };

@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Providers } from "./providers";
 import { I18nProviderClient } from "@/locales/client";
 import { getStaticParams } from "@/locales/server";
@@ -18,7 +18,7 @@ export function generateStaticParams() {
   return getStaticParams();
 }
 
-export default async function RootLayout({
+export default async function LocaleLayout({
   children,
   params,
 }: {
