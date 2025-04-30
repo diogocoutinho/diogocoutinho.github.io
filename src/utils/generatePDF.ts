@@ -157,24 +157,37 @@ const getContactInfo = (): {
 
   // Procura pelos elementos de contato dentro da seção
   const contactItems = contactSection.querySelectorAll(
-    ".flex.items-start.space-x-4"
+    ".flex.items-center.space-x-4"
   );
   const contactInfo: { [key: string]: string } = {};
 
   contactItems.forEach((item) => {
+    // Procura pelo texto do label
     const label =
       item.querySelector(".text-sm.font-medium")?.textContent?.trim() || "";
-    const value =
-      item.querySelector("a, p.text-gray-900")?.textContent?.trim() || "";
 
+    // Procura pelo valor, que pode estar em um link ou parágrafo
+    const valueElement = item.querySelector("a.text-lg, p.text-lg");
+    const value = valueElement?.textContent?.trim() || "";
+
+    // Identifica o tipo de informação baseado no label
     if (label.toLowerCase().includes("email")) {
       contactInfo.email = value;
-    } else if (label.toLowerCase().includes("telefone")) {
+    } else if (
+      label.toLowerCase().includes("telefone") ||
+      label.toLowerCase().includes("phone")
+    ) {
       contactInfo.phone = value;
-    } else if (label.toLowerCase().includes("localização")) {
+    } else if (
+      label.toLowerCase().includes("localização") ||
+      label.toLowerCase().includes("location")
+    ) {
       contactInfo.location = value;
     }
   });
+
+  // Log para debug
+  console.log("Contact info extracted:", contactInfo);
 
   return {
     email: contactInfo.email || "",
