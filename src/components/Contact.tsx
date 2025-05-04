@@ -59,7 +59,7 @@ export default function Contact() {
     },
     {
       name: "LinkedIn",
-      href: "https://linkedin.com/in/diogocoutinho",
+      href: "https://linkedin.com/in/diogoccoutinho",
       icon: (
         <svg
           className="h-6 w-6"
