@@ -46,7 +46,7 @@ const getSectionContent = (
       content.push(`Modo de Trabalho: ${experience.workMode}`);
       content.push(""); // Espaço em branco
 
-      if (experience.stacks.length > 0) {
+      if (experience.stacks && experience.stacks.length > 0) {
         content.push("Tecnologias utilizadas:");
         // experience.stacks.forEach((stack) => content.push(`• ${stack}`));
         content.push(experience.stacks.join(", "));

@@ -321,6 +321,53 @@ export const experiences = [
     logoUrl:
       "https://media.licdn.com/dms/image/v2/D4D0BAQFJeEn5s_txZA/company-logo_100_100/company-logo_100_100/0/1662057594494/codificar_logo?e=1751500800&v=beta&t=mEMYGoDW2K3FXcxp35ztuXfqONsK13tMosErQwmPNuI",
   },
+  {
+    company: "COPABO IND. E COM. LTDA",
+    position: "Comprador",
+    duration: "out de 2011 - nov de 2018 · 7 anos 2 meses",
+    location: "Belo Horizonte, Minas Gerais, Brasil",
+    workMode: "Presencial",
+    responsibilities: [
+      "Desde 2009 na KORBRAS, iniciando como Almoxarife e exercendo funções auxiliares, tais como, prensagem de mangueiras hidráulicas. Após um curso de Técnicas de Vendas - SENAC/MG fui promovido à Auxiliar de Vendas, passando assim para o escritório. Praticando algumas funções em vendas, decidi mostrar meu conhecimento em T.I para ajudar ainda mais a empresa. Resolvi fazer um curso voltado ao que a empresa precisa e que também é de meu interesse, Redes. Apos as necessidades da empresa aumentarem, fui transferido para o setor de compras e ainda pratico o máximo possível meus conhecimentos em T.I. para auxiliar a empresa. E ainda busco muito mais conhecimento e profissionalismo.",
+    ],
+  },
+  {
+    company: "KORBRAS IND. E COM. LTDA",
+    position: "Almoxarife",
+    duration: "out de 2009 - out de 2011 · 2 anos 1 mês",
+    location: "Belo Horizonte, Minas Gerais, Brasil",
+    workMode: "Presencial",
+    responsibilities: [
+      "Gestão de estoque",
+      "Gestão de compras",
+      "Gestão de fornecedores",
+      "Gestão de compras",
+    ],
+  },
+  {
+    company: "Casa das Correias LTDA",
+    position: "Auxiliar de Vendas",
+    duration: "ago de 2007 - out de 2009 · 2 anos 3 meses",
+    location: "Belo Horizonte, Minas Gerais, Brasil",
+    workMode: "Presencial",
+    responsibilities: [
+      "Gestão de estoque",
+      "Gestão de compras",
+      "Gestão de fornecedores",
+    ],
+  },
+  {
+    company: "AMAS",
+    position: "Aprendiz de Atendimento",
+    duration: "jul de 2004 - mai de 2006 · 1 ano 11 meses",
+    location: "Belo Horizonte, Minas Gerais, Brasil",
+    workMode: "Presencial",
+    responsibilities: [
+      "Aprendizado e desenvolvimento de habilidades em atendimento ao cliente",
+      "Suporte ao time de atendimento",
+      "Implementação de funcionalidades básicas",
+    ],
+  },
 ];
 
 export const educations = [
