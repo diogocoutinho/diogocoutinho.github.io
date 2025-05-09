@@ -412,7 +412,7 @@ export default function Home() {
         </Section>
 
         {/* Skills Section */}
-        <Section id="skills" title="Habilidades">
+        <Section id="skills" title={scopedT("Skills.title")}>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto bg-white dark:bg-gray-900">
             {skillCategories.map((category) => (
               <SkillCategory
@@ -426,7 +426,7 @@ export default function Home() {
         </Section>
 
         {/* Projects Section */}
-        <Section id="projects" title="Projetos">
+        <Section id="projects" title={scopedT("Projects.title")}>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {projects.map((project) => (
               <ProjectCard key={project.title} {...project} />
