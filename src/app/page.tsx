@@ -15,17 +15,10 @@ import {
   CircleStackIcon,
 } from "@heroicons/react/24/outline";
 import Section from "@/components/Section";
-import { useTheme } from "@/context/ThemeContext";
-import { useEffect } from "react";
 import { useScopedI18n } from "@/locales/client";
 
 export default function Home() {
-  const { theme } = useTheme();
   const scopedT = useScopedI18n("HomePage");
-
-  useEffect(() => {
-    console.log(theme);
-  }, [theme]);
 
   const projects = [
     {
