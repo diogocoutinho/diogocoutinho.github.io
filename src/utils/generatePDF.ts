@@ -23,7 +23,8 @@ const getSectionContent = (
         // Adiciona o título da categoria
         content.push(category.title);
         // Adiciona cada habilidade com bullet
-        category.skills.forEach((skill) => content.push(`• ${skill}`));
+        // category.skills.forEach((skill) => content.push(`• ${skill}`));
+        content.push(category.skills.join(", "));
         // Adiciona espaço em branco entre categorias
         content.push("");
       }
@@ -47,7 +48,8 @@ const getSectionContent = (
 
       if (experience.stacks.length > 0) {
         content.push("Tecnologias utilizadas:");
-        experience.stacks.forEach((stack) => content.push(`• ${stack}`));
+        // experience.stacks.forEach((stack) => content.push(`• ${stack}`));
+        content.push(experience.stacks.join(", "));
         content.push(""); // Espaço em branco
       }
 
@@ -94,7 +96,8 @@ const getSectionContent = (
       content.push(`Descrição: ${project.description}`);
       if (project.technologies.length > 0) {
         content.push("Tecnologias utilizadas:");
-        project.technologies.forEach((tech) => content.push(`• ${tech}`));
+        // project.technologies.forEach((tech) => content.push(`• ${tech}`));
+        content.push(project.technologies.join(", "));
       }
       content.push(""); // Espaço em branco entre projetos
     });
