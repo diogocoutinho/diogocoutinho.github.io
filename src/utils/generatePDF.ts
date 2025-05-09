@@ -1,4 +1,10 @@
 import jsPDF from "jspdf";
+import {
+  skillCategories,
+  experiences,
+  educations,
+  projects,
+} from "@/utils/constants";
 
 const getSectionContent = (
   sectionId: string
@@ -8,57 +14,48 @@ const getSectionContent = (
 
   const title = section.querySelector("h2")?.textContent?.trim() || "";
 
-  // Tratamento especial para a seção de experiência
-  if (sectionId === "experience") {
-    const experienceItems = section.querySelectorAll(
-      ".bg-white.dark\\:bg-gray-900"
-    );
+  // Tratamento especial para a seção de habilidades
+  if (sectionId === "skills") {
     const content: string[] = [];
 
-    experienceItems.forEach((item) => {
-      const position =
-        item.querySelector("h3.text-2xl")?.textContent?.trim() || "";
-      const company =
-        item.querySelector("p.text-xl")?.textContent?.trim() || "";
-
-      // Extrai período, localização e modo de trabalho
-      const details = Array.from(
-        item.querySelectorAll(".flex.flex-wrap.items-center.gap-3 span")
-      )
-        .map((span) => span.textContent?.trim())
-        .filter(Boolean);
-
-      // Extrai as stacks
-      const stacks = Array.from(
-        item.querySelectorAll(".flex.flex-wrap.gap-2 span.bg-blue-100")
-      )
-        .map((span) => span.textContent?.trim())
-        .filter(Boolean);
-
-      // Extrai as responsabilidades
-      const responsibilities = Array.from(
-        item.querySelectorAll("ul.space-y-2 li")
-      )
-        .map((li) => li.textContent?.trim())
-        .filter(Boolean);
-
-      // Adiciona informações da experiência formatadas
-      content.push(`Empresa: ${company}`);
-      content.push(`Cargo: ${position}`);
-      if (details.length > 0) {
-        content.push(`Detalhes: ${details.join(" | ")}`);
+    skillCategories.forEach((category) => {
+      if (category.skills.length > 0) {
+        // Adiciona o título da categoria
+        content.push(category.title);
+        // Adiciona cada habilidade com bullet
+        category.skills.forEach((skill) => content.push(`• ${skill}`));
+        // Adiciona espaço em branco entre categorias
+        content.push("");
       }
+    });
+
+    return { title, content };
+  }
+
+  // Tratamento especial para a seção de experiência
+  if (sectionId === "experience") {
+    const content: string[] = [];
+
+    experiences.forEach((experience) => {
+      // Adiciona informações da experiência formatadas
+      content.push(`Empresa: ${experience.company}`);
+      content.push(`Cargo: ${experience.position}`);
+      content.push(`Período: ${experience.duration}`);
+      content.push(`Local: ${experience.location}`);
+      content.push(`Modo de Trabalho: ${experience.workMode}`);
       content.push(""); // Espaço em branco
 
-      if (stacks.length > 0) {
+      if (experience.stacks.length > 0) {
         content.push("Tecnologias utilizadas:");
-        stacks.forEach((stack) => content.push(`• ${stack}`));
+        experience.stacks.forEach((stack) => content.push(`• ${stack}`));
         content.push(""); // Espaço em branco
       }
 
-      if (responsibilities.length > 0) {
+      if (experience.responsibilities.length > 0) {
         content.push("Principais responsabilidades:");
-        responsibilities.forEach((resp) => content.push(`• ${resp}`));
+        experience.responsibilities.forEach((resp) =>
+          content.push(`• ${resp}`)
+        );
       }
 
       content.push(""); // Espaço em branco entre experiências
@@ -69,29 +66,18 @@ const getSectionContent = (
 
   // Tratamento especial para a seção de educação
   if (sectionId === "education") {
-    const educationItems = section.querySelectorAll("div.flex-grow");
     const content: string[] = [];
 
-    educationItems.forEach((item) => {
-      const institution =
-        item.querySelector("#institution")?.textContent?.trim() || "";
-      const degree = item.querySelector("#degree")?.textContent?.trim() || "";
-      const duration =
-        item.querySelector("#duration")?.textContent?.trim() || "";
-      const location =
-        item.querySelector("#location")?.textContent?.trim() || "";
-      const description =
-        item.querySelector("#description")?.textContent?.trim() || "";
-
+    educations.forEach((education) => {
       // Adiciona informações da educação formatadas
-      content.push(`Instituição: ${institution}`);
-      content.push(`Curso: ${degree}`);
-      content.push(`Período: ${duration}`);
-      content.push(`Local: ${location}`);
-      if (description) {
+      content.push(`Instituição: ${education.institution}`);
+      content.push(`Curso: ${education.degree}`);
+      content.push(`Período: ${education.duration}`);
+      content.push(`Local: ${education.location}`);
+      if (education.description) {
         content.push(""); // Espaço em branco
         content.push("Descrição:");
-        content.push(description);
+        content.push(education.description);
       }
       content.push(""); // Espaço em branco entre formações
     });
@@ -99,32 +85,18 @@ const getSectionContent = (
     return { title, content };
   }
 
-  // Tratamento especial para a seção de habilidades
-  if (sectionId === "skills") {
-    const skillCategories = section.querySelectorAll(
-      ".bg-white.dark\\:bg-gray-900"
-    );
+  // Tratamento especial para a seção de projetos
+  if (sectionId === "projects") {
     const content: string[] = [];
 
-    skillCategories.forEach((category) => {
-      // Pega o título da categoria
-      const title =
-        category.querySelector("h3#category-title")?.textContent?.trim() || "";
-      if (!title) return; // Pula se não encontrar título
-
-      // Pega as habilidades dentro da categoria
-      const skills = Array.from(category.querySelectorAll("#skills-list span"))
-        .map((span) => span.textContent?.trim())
-        .filter(Boolean);
-
-      if (skills.length > 0) {
-        // Adiciona o título da categoria
-        content.push(title);
-        // Adiciona cada habilidade com bullet
-        skills.forEach((skill) => content.push(`• ${skill}`));
-        // Adiciona espaço em branco entre categorias
-        content.push("");
+    projects.forEach((project) => {
+      content.push(`Título: ${project.title}`);
+      content.push(`Descrição: ${project.description}`);
+      if (project.technologies.length > 0) {
+        content.push("Tecnologias utilizadas:");
+        project.technologies.forEach((tech) => content.push(`• ${tech}`));
       }
+      content.push(""); // Espaço em branco entre projetos
     });
 
     return { title, content };
