@@ -6,7 +6,7 @@ interface ExperienceCardProps {
   duration: string;
   location: string;
   workMode: string;
-  stacks: string[];
+  stacks?: string[];
   responsibilities: string[];
   logoUrl?: string;
 }
