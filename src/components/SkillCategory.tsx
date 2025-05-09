@@ -1,5 +1,3 @@
-import { useScopedI18n } from "@/locales/client";
-
 interface SkillCategoryProps {
   title: string;
   skills: string[];
