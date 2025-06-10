@@ -74,6 +74,22 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects = [
   {
+    title: "Kenny G. Almeida",
+    description:
+      "Site para a empresa Kenny G. Almeida, desenvolvido com Next.js, TypeScript e Tailwind CSS. Uma aplicação moderna e responsiva que apresenta minha trajetória profissional e projetos.",
+    imageUrl: "/kenny.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React",
+      "GitHub Pages",
+      "GitHub Actions",
+    ],
+    githubUrl: "https://github.com/diogocoutinho/kennyalmeida.github.io",
+    liveUrl: "https://kennygalmeida.com.br/",
+  },
+  {
     title: "GC Contabilidade Digital",
     description: "Website para a empresa GC Contabilidade Digital",
     imageUrl: "/gcdigicont.png",
