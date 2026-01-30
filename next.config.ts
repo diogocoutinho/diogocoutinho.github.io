@@ -4,7 +4,7 @@ const repo = "diogocoutinho.github.io";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  output: "export",
+  // output: "export",
   basePath:
     isGithubPages && process.env.NODE_ENV === "production" ? `/${repo}` : "",
   assetPrefix:

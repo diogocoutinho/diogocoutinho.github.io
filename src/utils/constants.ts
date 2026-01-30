@@ -1,9 +1,9 @@
 import {
-  ServerIcon,
-  PaintBrushIcon,
-  CodeBracketIcon,
-  CircleStackIcon,
-} from "@heroicons/react/24/outline";
+  Server,
+  Palette,
+  Code,
+  Database,
+} from "lucide-react";
 import React from "react";
 import { ReactNode } from "react";
 
@@ -16,7 +16,7 @@ interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     title: "Backend Development",
-    icon: React.createElement(ServerIcon, { className: "w-6 h-6" }),
+    icon: React.createElement(Server, { className: "w-6 h-6" }),
     skills: [
       "PHP",
       "Laravel",
@@ -30,7 +30,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Frontend Development",
-    icon: React.createElement(PaintBrushIcon, { className: "w-6 h-6" }),
+    icon: React.createElement(Palette, { className: "w-6 h-6" }),
     skills: [
       "React",
       "Next.js",
@@ -45,7 +45,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "DevOps",
-    icon: React.createElement(CodeBracketIcon, { className: "w-6 h-6" }),
+    icon: React.createElement(Code, { className: "w-6 h-6" }),
     skills: [
       "Docker",
       "CI/CD",
@@ -59,7 +59,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     title: "Databases",
-    icon: React.createElement(CircleStackIcon, { className: "w-6 h-6" }),
+    icon: React.createElement(Database, { className: "w-6 h-6" }),
     skills: [
       "MySQL",
       "PostgreSQL",
@@ -74,6 +74,19 @@ export const skillCategories: SkillCategory[] = [
 
 export const projects = [
   {
+    title: "Escaala Brasil",
+    description:
+      "Landing Page para o evento Escaala Brasil. Leve sua pequena empresa a um novo patamar com estratégias práticas de vendas, gestão e marketing.",
+    imageUrl: "/escaala.png",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "React",
+    ],
+    liveUrl: "https://escaalabrasil.com.br/",
+  },
+  {
     title: "Kenny G. Almeida",
     description:
       "Site para a empresa Kenny G. Almeida, desenvolvido com Next.js, TypeScript e Tailwind CSS. Uma aplicação moderna e responsiva que apresenta minha trajetória profissional e projetos.",
@@ -86,7 +99,6 @@ export const projects = [
       "GitHub Pages",
       "GitHub Actions",
     ],
-    githubUrl: "https://github.com/diogocoutinho/kennyalmeida.github.io",
     liveUrl: "https://kennygalmeida.com.br/",
   },
   {
@@ -100,7 +112,6 @@ export const projects = [
       "React",
       "GitHub Actions",
     ],
-    githubUrl: "https://github.com/diogocoutinho/gcdigicont2",
     liveUrl: "https://gcdigicont.com.br/",
   },
   {
@@ -136,6 +147,33 @@ export const projects = [
 ];
 
 export const experiences = [
+  {
+    company: "poenatela",
+    position: "Senior Developer",
+    duration: "Jul 2025 - Present · 7 mos",
+    location: "Belo Horizonte, Minas Gerais, Brazil",
+    workMode: "On-site",
+    stacks: [
+      "PHP",
+      "Laravel",
+      "Vuejs",
+      "Git",
+      "Docker",
+      "CI/CD",
+      "PostgreSQL",
+      "Redis",
+    ],
+    responsibilities: [
+      "Maintenance and development of clean code",
+      "Development environment management",
+      "Code documentation",
+      "Team code review",
+      "Preparation and specification of new features",
+      "Support to other colleagues when necessary in the development of tasks",
+    ],
+    logoUrl:
+      "https://media.licdn.com/dms/image/v2/D4D0BAQFjuCLDBuIpjA/company-logo_100_100/company-logo_100_100/0/1690491692534/rm2_asset_logo?e=1771459200&v=beta&t=EzyI8Wleud2ksrN_aFVwxJid1oS7dCovkaY2nRViyHs",
+  },
   {
     company: "EASY DEV SOLUÇÕES DIGITAIS LTDA",
     position: "Desenvolvedor Full Stack",
@@ -180,7 +218,7 @@ export const experiences = [
       "Apoio aos demais times quando necessário no desenvolvimento de tarefas",
     ],
     logoUrl:
-      "https://media.licdn.com/dms/image/v2/D4D0BAQF_Er9djinAdA/company-logo_100_100/B4DZaINOaZGcAY-/0/1746041890950?e=1752105600&v=beta&t=20u5Vgeu40xd_DBwdJBS6lQHN65-SSvjpfEgHM-c2Eo",
+      "https://media.licdn.com/dms/image/v2/D4D0BAQF_Er9djinAdA/company-logo_100_100/B4DZaINOaZGcAY-/0/1746041890950?e=1771459200&v=beta&t=5dF_9ZqLyF_omHHLLmoi0dgDD0DiYgPYG5jOhQaa-Oo",
   },
   {
     company: "Ailu",
@@ -209,7 +247,7 @@ export const experiences = [
       "Apoio aos demais times quando necessário no desenvolvimento de tarefas",
     ],
     logoUrl:
-      "https://media.licdn.com/dms/image/v2/D4D0BAQH_gpjghYN2yw/company-logo_200_200/company-logo_200_200/0/1719320009271/somosailu_logo?e=1752105600&v=beta&t=aDreewUvedPCIzsZiVP073RutlNaoLvipsESF9BG8qQ",
+      "https://media.licdn.com/dms/image/v2/D4D0BAQH_gpjghYN2yw/company-logo_100_100/company-logo_100_100/0/1719320009271/somosailu_logo?e=1771459200&v=beta&t=ZlEudo-j__PZc3nX8C3p-EIMA6EVkf990kLbxKWFWjo",
   },
   {
     company: "For People",
@@ -237,7 +275,7 @@ export const experiences = [
       "Apoio aos demais times quando necessário no desenvolvimento de tarefas",
     ],
     logoUrl:
-      "https://media.licdn.com/dms/image/v2/C4E0BAQGILem4wxKbpw/company-logo_100_100/company-logo_100_100/0/1630594552638/for_people_softwares_logo?e=1751500800&v=beta&t=czXq_7RlRBWmjRjIZ64H8brCd2w5iDUlA_EjWkaFSRw",
+      "https://media.licdn.com/dms/image/v2/C4E0BAQGILem4wxKbpw/company-logo_100_100/company-logo_100_100/0/1630594552638/for_people_softwares_logo?e=1771459200&v=beta&t=jYes6r0APHGB3wETQrYGa6xCAxoUb8Qrtg2AeSMJxx0",
   },
   {
     company: "Onfly",
@@ -266,7 +304,7 @@ export const experiences = [
       "Apoio aos demais times quando necessário no desenvolvimento de tarefas",
     ],
     logoUrl:
-      "https://media.licdn.com/dms/image/v2/C4D0BAQFHAF7AZsRvrw/company-logo_100_100/company-logo_100_100/0/1669900066411/onfly_logo?e=1751500800&v=beta&t=AmIKyLvvr3jsJk-qqzNHK7095sAporxXi0KF9K8k5Bo",
+      "https://media.licdn.com/dms/image/v2/C4D0BAQFHAF7AZsRvrw/company-logo_100_100/company-logo_100_100/0/1669900066411/onfly_logo?e=1771459200&v=beta&t=Q4Mz05l1nF5LIUJc6Q19bXn-0mRG__TJIVfl5O8XFzg",
   },
   {
     company: "Codificar Sistemas",
@@ -296,7 +334,7 @@ export const experiences = [
       "Apoio aos demais times quando necessário no desenvolvimento de tarefas em outros projetos",
     ],
     logoUrl:
-      "https://media.licdn.com/dms/image/v2/D4D0BAQFJeEn5s_txZA/company-logo_100_100/company-logo_100_100/0/1662057594494/codificar_logo?e=1751500800&v=beta&t=mEMYGoDW2K3FXcxp35ztuXfqONsK13tMosErQwmPNuI",
+      "https://media.licdn.com/dms/image/v2/D4D0BAQFJeEn5s_txZA/company-logo_100_100/company-logo_100_100/0/1662057594494/codificar_logo?e=1771459200&v=beta&t=gU0zVCnmeJ0c0qk7agWdc3n_dC_y5754T-jlNXXxncY",
   },
   {
     company: "Codificar Sistemas",
@@ -320,7 +358,7 @@ export const experiences = [
       "Implementação de novas funcionalidades",
     ],
     logoUrl:
-      "https://media.licdn.com/dms/image/v2/D4D0BAQFJeEn5s_txZA/company-logo_100_100/company-logo_100_100/0/1662057594494/codificar_logo?e=1751500800&v=beta&t=mEMYGoDW2K3FXcxp35ztuXfqONsK13tMosErQwmPNuI",
+      "https://media.licdn.com/dms/image/v2/D4D0BAQFJeEn5s_txZA/company-logo_100_100/company-logo_100_100/0/1662057594494/codificar_logo?e=1771459200&v=beta&t=gU0zVCnmeJ0c0qk7agWdc3n_dC_y5754T-jlNXXxncY",
   },
   {
     company: "Codificar Sistemas",
@@ -335,7 +373,7 @@ export const experiences = [
       "Implementação de funcionalidades básicas",
     ],
     logoUrl:
-      "https://media.licdn.com/dms/image/v2/D4D0BAQFJeEn5s_txZA/company-logo_100_100/company-logo_100_100/0/1662057594494/codificar_logo?e=1751500800&v=beta&t=mEMYGoDW2K3FXcxp35ztuXfqONsK13tMosErQwmPNuI",
+      "https://media.licdn.com/dms/image/v2/D4D0BAQFJeEn5s_txZA/company-logo_100_100/company-logo_100_100/0/1662057594494/codificar_logo?e=1771459200&v=beta&t=gU0zVCnmeJ0c0qk7agWdc3n_dC_y5754T-jlNXXxncY",
   },
   {
     company: "COPABO IND. E COM. LTDA",
@@ -346,6 +384,8 @@ export const experiences = [
     responsibilities: [
       "Desde 2009 na KORBRAS, iniciando como Almoxarife e exercendo funções auxiliares, tais como, prensagem de mangueiras hidráulicas. Após um curso de Técnicas de Vendas - SENAC/MG fui promovido à Auxiliar de Vendas, passando assim para o escritório. Praticando algumas funções em vendas, decidi mostrar meu conhecimento em T.I para ajudar ainda mais a empresa. Resolvi fazer um curso voltado ao que a empresa precisa e que também é de meu interesse, Redes. Apos as necessidades da empresa aumentarem, fui transferido para o setor de compras e ainda pratico o máximo possível meus conhecimentos em T.I. para auxiliar a empresa. E ainda busco muito mais conhecimento e profissionalismo.",
     ],
+    logoUrl:
+      "https://media.licdn.com/dms/image/v2/D4D0BAQHMV8iSbWA9iw/company-logo_100_100/B4DZrqXnxfHwAQ-/0/1764868653139/copabo_industria_logo?e=1771459200&v=beta&t=-f1FOJmWLFKbBYf-WdTcGLLH3F2ce5IlFEPULTno44o",
   },
   {
     company: "KORBRAS IND. E COM. LTDA",
@@ -394,8 +434,6 @@ export const educations = [
     location: "Belo Horizonte, Minas Gerais, Brasil",
     description:
       "Tecnólogo em Análise e Desenvolvimento de Sistemas, com ênfase em desenvolvimento de software e sistemas de informação.",
-    logoUrl:
-      "https://media.licdn.com/dms/image/v2/C4E0BAQFJcNanAbxHZg/company-logo_200_200/company-logo_200_200/0/1631373584863/facisabh_logo?e=1751500800&v=beta&t=U8b9SVRF14Hwiz1FCjvmPtayt3qgtOhcTN6cT-lRth4",
   },
   {
     institution: "SENAC MG",
@@ -404,8 +442,6 @@ export const educations = [
     location: "Belo Horizonte, Minas Gerais, Brasil",
     description:
       "Curso técnico focado em infraestrutura de redes, incluindo topologias, endereçamento IP, protocolos TCP/IP, cabeamento estruturado, redes wireless e configuração de equipamentos.",
-    logoUrl:
-      "https://media.licdn.com/dms/image/v2/C4D0BAQEX6f-oCb07jQ/company-logo_100_100/company-logo_100_100/0/1669896560309/senacminas_logo?e=1751500800&v=beta&t=zCHEgixhYsL1lfqbPDFXqvSHx8ebgmhuPDJbPcTtlpw",
   },
   {
     institution: "SENAC MG",
@@ -414,8 +450,6 @@ export const educations = [
     location: "Belo Horizonte, Minas Gerais, Brasil",
     description:
       "Curso focado em técnicas de vendas, evolução do consumidor, competências do vendedor e matemática comercial.",
-    logoUrl:
-      "https://media.licdn.com/dms/image/v2/C4D0BAQEX6f-oCb07jQ/company-logo_100_100/company-logo_100_100/0/1669896560309/senacminas_logo?e=1751500800&v=beta&t=zCHEgixhYsL1lfqbPDFXqvSHx8ebgmhuPDJbPcTtlpw",
   },
   {
     institution: "S.O.S Computadores",

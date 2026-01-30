@@ -1,12 +1,15 @@
+import Link from "next/link";
 import * as React from "react";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Outfit } from "next/font/google";
 import "../globals.css";
-import { Providers } from "./providers";
+import { Providers } from "../providers";
 import { I18nProviderClient } from "@/locales/client";
 import { getStaticParams } from "@/locales/server";
+import Background from "@/components/Background";
+import Navbar from "@/components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Diogo Coutinho - Desenvolvedor Full Stack",
@@ -25,21 +28,19 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  let { locale } = await params;
-
-  if (!locale) {
-    locale = "pt-BR";
-  }
+  const { locale } = await params;
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      <body
-        className={`${inter.className} bg-white dark:bg-gray-900 text-gray-900 dark:text-white`}
-      >
-        <I18nProviderClient locale={locale}>
-          <Providers>{children}</Providers>
-        </I18nProviderClient>
-      </body>
-    </html>
+    <div className={`scroll-smooth ${outfit.className} bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen relative`}>
+      <I18nProviderClient locale={locale}>
+        <Providers>
+          <Navbar />
+          <Background />
+          <div className="relative z-10 flex flex-col min-h-screen">
+            {children}
+          </div>
+        </Providers>
+      </I18nProviderClient>
+    </div>
   );
 }

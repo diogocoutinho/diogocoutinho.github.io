@@ -1,24 +1,49 @@
 "use client";
 
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
+import clsx from "clsx";
 
 interface SectionProps {
   id: string;
   children: ReactNode;
   title?: string;
+  className?: string;
 }
 
-export default function Section({ id, children, title }: SectionProps) {
+export default function Section({ id, children, title, className }: SectionProps) {
   return (
     <section
       id={id}
-      className="min-h-9/6 pt-5 pb-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300"
+      className={clsx(
+        "py-24 px-4 sm:px-6 lg:px-8 relative scroll-mt-16",
+        className
+      )}
     >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-center text-blue-600 dark:text-blue-400">
-          {title}
-        </h2>
-        <div className="prose dark:prose-invert max-w-none">{children}</div>
+        {title && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 inline-block pb-2">
+              {title}
+            </h2>
+            <div className="h-1.5 w-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
+          </motion.div>
+        )}
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
+          {children}
+        </motion.div>
       </div>
     </section>
   );

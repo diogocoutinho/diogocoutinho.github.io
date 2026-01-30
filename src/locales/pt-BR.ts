@@ -20,8 +20,10 @@ export default {
     hero: {
       title: "Diogo Coutinho",
       subtitle: "Desenvolvedor Full Stack",
-      description:
-        "Desenvolvedor apaixonado por criar soluções inovadoras e eficientes.",
+      description: "Desenvolvedor apaixonado por criar soluções inovadoras e eficientes.",
+      availableForHire: "Disponível para contratar",
+      viewProjects: "Ver Projetos",
+      contactMe: "Contato"
     },
     About: {
       title: "Sobre mim",
