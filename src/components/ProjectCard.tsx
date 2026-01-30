@@ -9,7 +9,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl: string | null;
   imageUrl?: string | null;
 }

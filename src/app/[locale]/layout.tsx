@@ -1,4 +1,4 @@
-import Link from "next/link";
+
 import * as React from "react";
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
