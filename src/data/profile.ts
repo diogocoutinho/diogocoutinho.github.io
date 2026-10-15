@@ -29,10 +29,10 @@ export const hero = {
     pt: "Engenheiro de Software Full Stack Sênior & Tech Lead",
     en: "Senior Full Stack Software Engineer & Tech Lead",
   },
-  stack: "Laravel · PHP · Vue · React/Next.js · Node.js · IA aplicada",
+  stack: "Laravel · PHP · Python/FastAPI · Vue · React/Next.js · Node.js · AWS · IA aplicada",
   pitch: {
-    pt: "Construo produtos web e SaaS que viram resultado de negócio: do back-end em Laravel ao front-end em Vue/React, com integrações de IA (agentes, automações e servidores MCP). 7+ anos entregando software, liderança de time em scale-up e fundador da EasyDev.",
-    en: "I build web products and SaaS that turn into business results: from Laravel back-ends to Vue/React front-ends, with AI integrations (agents, automations and MCP servers). 7+ years shipping software, team lead at a scale-up and founder of EasyDev.",
+    pt: "Construo produtos web e SaaS que viram resultado de negócio: do back-end em Laravel e Python ao front-end em Vue/React, com integrações de IA (agentes, automações e servidores MCP). 7+ anos entregando software, liderança de time em scale-up e fundador da EasyDev.",
+    en: "I build web products and SaaS that turn into business results: from Laravel and Python back-ends to Vue/React front-ends, with AI integrations (agents, automations and MCP servers). 7+ years shipping software, team lead at a scale-up and founder of EasyDev.",
   },
   ctaPrimary: { pt: "Vamos conversar", en: "Let's talk" },
   ctaSecondary: { pt: "Ver cases", en: "See case studies" },
@@ -48,8 +48,8 @@ export const stats: { value: string; label: L }[] = [
 
 export const about: L[] = [
   {
-    pt: "Sou engenheiro de software full stack com foco em back-end PHP/Laravel e front-end Vue e React. Desde 2018 desenvolvo plataformas de streaming, sistemas de gestão, SaaS B2B e aplicativos mobile — e desde 2021 também lidero pessoas: na Onfly (travel & expense tech) liderei um time de 4 a 5 desenvolvedores por quase 2 anos, conduzindo code review, 1:1s, distribuição de demandas e especificação de funcionalidades com PO e PM.",
-    en: "I'm a full stack software engineer focused on PHP/Laravel back-ends and Vue and React front-ends. Since 2018 I've built streaming platforms, management systems, B2B SaaS and mobile apps — and since 2021 I've also led people: at Onfly (travel & expense tech) I led a team of 4–5 developers for almost 2 years, running code reviews, 1:1s, work allocation and feature specification with PO and PM.",
+    pt: "Sou engenheiro de software full stack com foco em back-end PHP/Laravel e Python/FastAPI, front-end Vue e React e infraestrutura na AWS. Desde 2018 desenvolvo plataformas de streaming, sistemas de gestão, SaaS B2B e aplicativos mobile — e desde 2021 também lidero pessoas: na Onfly (travel & expense tech) liderei um time de 4 a 5 desenvolvedores por quase 2 anos, conduzindo code review, 1:1s, distribuição de demandas e especificação de funcionalidades com PO e PM.",
+    en: "I'm a full stack software engineer focused on PHP/Laravel and Python/FastAPI back-ends, Vue and React front-ends and AWS infrastructure. Since 2018 I've built streaming platforms, management systems, B2B SaaS and mobile apps — and since 2021 I've also led people: at Onfly (travel & expense tech) I led a team of 4–5 developers for almost 2 years, running code reviews, 1:1s, work allocation and feature specification with PO and PM.",
   },
   {
     pt: "Antes da tecnologia, passei mais de 10 anos em compras, vendas e estoque na indústria. Isso me dá algo que faz diferença em projeto: entendo o negócio por trás do código, falo a língua do cliente e priorizo o que gera retorno.",
@@ -299,11 +299,12 @@ export const experiences: Experience[] = [
     },
     bullets: [
       { pt: "Conduzo a migração de arquitetura da plataforma de Filament/Livewire para Laravel 12 + Inertia + React + TypeScript", en: "Leading the platform's architecture migration from Filament/Livewire to Laravel 12 + Inertia + React + TypeScript" },
-      { pt: "Desenho da infraestrutura AWS (EC2, RDS, ElastiCache, S3/CloudFront) e de deploys automatizados com GitHub Actions", en: "Designing the AWS infrastructure (EC2, RDS, ElastiCache, S3/CloudFront) and automated deployments with GitHub Actions" },
+      { pt: "Desenvolvimento de microsserviços e APIs em Python + FastAPI integrados à plataforma Laravel", en: "Building Python + FastAPI microservices and APIs integrated with the Laravel platform" },
+      { pt: "Serverless e infraestrutura na AWS: Lambda, Cognito, EC2, RDS, ElastiCache e S3/CloudFront, com deploys automatizados via GitHub Actions", en: "Serverless and infrastructure on AWS: Lambda, Cognito, EC2, RDS, ElastiCache and S3/CloudFront, with automated deployments via GitHub Actions" },
       { pt: "Autor da documentação técnica do produto (40+ documentos de arquitetura, domínio e casos de uso)", en: "Author of the product's technical documentation (40+ architecture, domain and use-case documents)" },
       { pt: "Levantamento de requisitos com o negócio, relatórios de KPIs e revisão de código do time", en: "Requirements gathering with the business, KPI reporting and team code review" },
     ],
-    stacks: ["PHP", "Laravel 12", "Inertia.js", "React", "TypeScript", "Vue.js", "PostgreSQL", "Redis", "AWS", "Docker", "GitHub Actions"],
+    stacks: ["PHP", "Laravel 12", "Python", "FastAPI", "Inertia.js", "React", "TypeScript", "Vue.js", "PostgreSQL", "Redis", "AWS Lambda", "AWS Cognito", "Docker", "GitHub Actions"],
   },
   {
     company: "EasyDev Soluções Digitais",
@@ -399,7 +400,7 @@ export const experiences: Experience[] = [
 export const skillGroups: { title: L; skills: string[] }[] = [
   {
     title: { pt: "Back-end", en: "Back-end" },
-    skills: ["PHP 8", "Laravel", "Lumen", "Livewire", "Hyperf / Swoole", "Node.js", "NestJS", "Express", "AdonisJS", "REST APIs", "Queues & Jobs", "Microservices"],
+    skills: ["PHP 8", "Laravel", "Lumen", "Livewire", "Hyperf / Swoole", "Python", "FastAPI", "Node.js", "NestJS", "Express", "AdonisJS", "REST APIs", "Queues & Jobs", "Microservices"],
   },
   {
     title: { pt: "Front-end & Mobile", en: "Front-end & Mobile" },
@@ -411,7 +412,7 @@ export const skillGroups: { title: L; skills: string[] }[] = [
   },
   {
     title: { pt: "Dados, Cloud & DevOps", en: "Data, Cloud & DevOps" },
-    skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB", "Typesense", "Docker", "CI/CD", "GitHub Actions", "AWS", "Linux", "Nginx"],
+    skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB", "Typesense", "Docker", "CI/CD", "GitHub Actions", "AWS (Lambda, Cognito, EC2, RDS, S3)", "Serverless", "Linux", "Nginx"],
   },
   {
     title: { pt: "Integrações & Produto", en: "Integrations & Product" },
@@ -449,6 +450,6 @@ export const languages: { name: L; level: L }[] = [
 ];
 
 export const cvSummary: L = {
-  pt: "Engenheiro de Software Full Stack Sênior com 7+ anos de experiência em PHP/Laravel, Vue.js, React/Next.js e Node.js, incluindo 2 anos liderando um time de 4 a 5 desenvolvedores na Onfly. Fundador da EasyDev, onde construí produtos SaaS, sistemas sob medida e integrações de IA (agentes, automações e servidores MCP). Perfil hands-on, com visão de negócio construída em 10+ anos de compras e vendas na indústria.",
-  en: "Senior Full Stack Software Engineer with 7+ years of experience in PHP/Laravel, Vue.js, React/Next.js and Node.js, including 2 years leading a team of 4–5 developers at Onfly. Founder of EasyDev, where I built SaaS products, custom systems and AI integrations (agents, automations and MCP servers). Hands-on profile with business sense built over 10+ years in purchasing and sales in industry.",
+  pt: "Engenheiro de Software Full Stack Sênior com 7+ anos de experiência em PHP/Laravel, Python/FastAPI, Vue.js, React/Next.js, Node.js e AWS, incluindo 2 anos liderando um time de 4 a 5 desenvolvedores na Onfly. Fundador da EasyDev, onde construí produtos SaaS, sistemas sob medida e integrações de IA (agentes, automações e servidores MCP). Perfil hands-on, com visão de negócio construída em 10+ anos de compras e vendas na indústria.",
+  en: "Senior Full Stack Software Engineer with 7+ years of experience in PHP/Laravel, Python/FastAPI, Vue.js, React/Next.js, Node.js and AWS, including 2 years leading a team of 4–5 developers at Onfly. Founder of EasyDev, where I built SaaS products, custom systems and AI integrations (agents, automations and MCP servers). Hands-on profile with business sense built over 10+ years in purchasing and sales in industry.",
 };

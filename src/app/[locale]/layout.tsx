@@ -16,12 +16,12 @@ const seo = {
   "pt-BR": {
     title: "Diogo Coutinho · Engenheiro de Software Full Stack Sênior & Tech Lead | Laravel, Vue, React, IA",
     description:
-      "Engenheiro Full Stack Sênior com 7+ anos em PHP/Laravel, Vue.js, React/Next.js e Node.js, ex-líder de time na Onfly e fundador da EasyDev. Sistemas, SaaS e IA aplicada (agentes, automações e MCP).",
+      "Engenheiro Full Stack Sênior com 7+ anos em PHP/Laravel, Python/FastAPI, Vue.js, React/Next.js e Node.js, ex-líder de time na Onfly e fundador da EasyDev. Sistemas, SaaS e IA aplicada (agentes, automações e MCP).",
   },
   "en-US": {
     title: "Diogo Coutinho · Senior Full Stack Software Engineer & Tech Lead | Laravel, Vue, React, AI",
     description:
-      "Senior Full Stack Engineer with 7+ years in PHP/Laravel, Vue.js, React/Next.js and Node.js, former team lead at Onfly and founder of EasyDev. Systems, SaaS and applied AI (agents, automations and MCP).",
+      "Senior Full Stack Engineer with 7+ years in PHP/Laravel, Python/FastAPI, Vue.js, React/Next.js and Node.js, former team lead at Onfly and founder of EasyDev. Systems, SaaS and applied AI (agents, automations and MCP).",
   },
 } as const;
 
@@ -41,6 +41,9 @@ export async function generateMetadata({
       "Senior Full Stack Engineer",
       "Laravel",
       "PHP",
+      "Python",
+      "FastAPI",
+      "AWS",
       "Vue.js",
       "React",
       "Next.js",
@@ -77,7 +80,7 @@ const personJsonLd = {
   address: { "@type": "PostalAddress", addressLocality: "Belo Horizonte", addressRegion: "MG", addressCountry: "BR" },
   worksFor: { "@type": "Organization", name: "EasyDev Soluções Digitais", url: "https://easydevsolucoes.com.br" },
   alumniOf: "Faculdade de Ciências Sociais Aplicadas de Belo Horizonte",
-  knowsAbout: ["Laravel", "PHP", "Vue.js", "React", "Next.js", "Node.js", "TypeScript", "Docker", "AWS", "Model Context Protocol", "AI agents"],
+  knowsAbout: ["Laravel", "PHP", "Python", "FastAPI", "AWS Lambda", "Vue.js", "React", "Next.js", "Node.js", "TypeScript", "Docker", "AWS", "Model Context Protocol", "AI agents"],
   sameAs: ["https://www.linkedin.com/in/diogoccoutinho", "https://github.com/diogocoutinho", "https://easydevsolucoes.com.br"],
 };
 
