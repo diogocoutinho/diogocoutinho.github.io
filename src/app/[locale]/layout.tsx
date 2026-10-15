@@ -63,7 +63,7 @@ export async function generateMetadata({
       title: content.title,
       description: content.description,
       locale: locale.replace("-", "_"),
-      images: [{ url: "/profile.jpeg", width: 800, height: 800, alt: "Diogo Coutinho" }],
+      images: [{ url: "/profile.jpeg", width: 1000, height: 1000, alt: "Diogo Coutinho" }],
     },
     twitter: { card: "summary", title: content.title, description: content.description, images: ["/profile.jpeg"] },
   };
