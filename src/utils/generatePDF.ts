@@ -1,5 +1,6 @@
 import jsPDF from "jspdf";
 import {
+  aiExperience,
   contact,
   cvSummary,
   educations,
@@ -10,6 +11,15 @@ import {
   skillGroups,
   tr,
 } from "@/data/profile";
+
+// As fontes padrão do jsPDF só cobrem WinAnsi (cp1252): setas e outros símbolos viram lixo e quebram a largura da linha.
+const WIN_ANSI_EXTRAS = "ŒœŠšŸŽžƒˆ˜–—‘’‚“”„†‡•…‰‹›€™";
+const clean = (value: string) =>
+  value
+    .replace(/\s*→\s*/g, " / ")
+    .split("")
+    .filter((ch) => ch.charCodeAt(0) <= 0xff || WIN_ANSI_EXTRAS.includes(ch))
+    .join("");
 
 // Currículo em coluna única, sem tabelas nem ícones, para leitura por ATS (Gupy, Greenhouse, Lever...).
 export const generatePDF = async (locale: string = "pt-BR") => {
@@ -34,7 +44,7 @@ export const generatePDF = async (locale: string = "pt-BR") => {
     doc.setFont("helvetica", style);
     doc.setFontSize(size);
     doc.setTextColor(color, color, color);
-    const lines = doc.splitTextToSize(value, width - indent);
+    const lines = doc.splitTextToSize(clean(value), width - indent);
     const lineHeight = size * 0.45;
     ensure(lines.length * lineHeight);
     doc.text(lines, margin + indent, y);
@@ -45,7 +55,7 @@ export const generatePDF = async (locale: string = "pt-BR") => {
     doc.setFont("helvetica", "normal");
     doc.setFontSize(10);
     doc.setTextColor(40, 40, 40);
-    const lines = doc.splitTextToSize(value, width - 5);
+    const lines = doc.splitTextToSize(clean(value), width - 5);
     ensure(lines.length * 4.5);
     doc.text("•", margin + 1, y);
     doc.text(lines, margin + 5, y);
@@ -94,6 +104,15 @@ export const generatePDF = async (locale: string = "pt-BR") => {
     text(`${tr(group.title, locale)}: ${group.skills.join(", ")}`, 10);
   });
 
+  heading(L("Experiência com IA", "AI experience"));
+  aiExperience.forEach((item) => {
+    ensure(12);
+    text(tr(item.title, locale), 10.5, "bold", 15);
+    text(tr(item.description, locale), 9.5, "normal", 50);
+    text(`${L("Ferramentas", "Tools")}: ${item.tools.join(", ")}`, 9, "normal", 90);
+    y += 1.5;
+  });
+
   heading(L("Experiência profissional", "Professional experience"));
   experiences.forEach((exp) => {
     ensure(18);
@@ -106,14 +125,22 @@ export const generatePDF = async (locale: string = "pt-BR") => {
   });
 
   heading(L("Projetos e produtos", "Projects and products"));
-  projects.forEach((p) => {
-    ensure(12);
-    const link = p.liveUrl || p.githubUrl;
-    text(`${p.title} — ${tr(p.kind, locale)}${link ? `  (${link.replace(/^https?:\/\//, "").replace(/\/$/, "")})` : ""}`, 10, "bold", 15);
-    text(tr(p.summary, locale), 9.5, "normal", 50);
-    text(`${L("Tecnologias", "Technologies")}: ${p.technologies.join(", ")}`, 9, "normal", 90);
-    y += 1.5;
-  });
+  const link = (url?: string) => (url ? `  (${url.replace(/^https?:\/\//, "").replace(/\/$/, "")})` : "");
+  projects
+    .filter((p) => !p.client)
+    .forEach((p) => {
+      ensure(12);
+      text(`${p.title} — ${tr(p.kind, locale)}${link(p.liveUrl || p.githubUrl)}`, 10, "bold", 15);
+      text(tr(p.summary, locale), 9.5, "normal", 50);
+      text(`${L("Tecnologias", "Technologies")}: ${p.technologies.join(", ")}`, 9, "normal", 90);
+      y += 1.5;
+    });
+  // Clientes em uma linha cada: o detalhe fica no site.
+  text(L("Clientes", "Clients"), 10, "bold", 15);
+  projects
+    .filter((p) => p.client)
+    .forEach((p) => bullet(`${p.title} — ${tr(p.kind, locale).replace(/^(Cliente|Client) · /, "")}${link(p.liveUrl)}`));
+  y += 1.5;
 
   heading(L("Formação", "Education"));
   educations.forEach((e) => {

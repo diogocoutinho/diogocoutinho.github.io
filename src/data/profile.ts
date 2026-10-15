@@ -125,6 +125,42 @@ export const services: { icon: "code" | "bot" | "users" | "globe"; title: L; des
   },
 ];
 
+// Experiência prática com IA: o que foi construído e com quais ferramentas.
+export const aiExperience: { title: L; description: L; tools: string[] }[] = [
+  {
+    title: { pt: "Servidores MCP em produção", en: "MCP servers in production" },
+    description: {
+      pt: "Social Hub e EasyDev Hub expõem dezenas de ferramentas via Model Context Protocol, permitindo que Claude e ChatGPT publiquem conteúdo, respondam clientes, gerem cobranças e consultem dados reais do negócio.",
+      en: "Social Hub and EasyDev Hub expose dozens of tools through the Model Context Protocol, letting Claude and ChatGPT publish content, answer customers, issue invoices and query real business data.",
+    },
+    tools: ["MCP", "TypeScript", "Node.js", "OAuth", "Claude", "ChatGPT"],
+  },
+  {
+    title: { pt: "Agentes com aprovação humana", en: "Human-in-the-loop agents" },
+    description: {
+      pt: "Fila de respostas geradas por IA para comentários, DMs e WhatsApp, com aprovação do dono antes do envio, memória de marca por conta e aprendizado a partir das métricas de cada post.",
+      en: "AI-drafted replies for comments, DMs and WhatsApp queued for owner approval before sending, with per-account brand memory and learning from each post's metrics.",
+    },
+    tools: ["Claude API", "Meta Graph API", "WhatsApp Cloud API", "Prompt engineering"],
+  },
+  {
+    title: { pt: "IA dentro de frameworks e produtos", en: "AI inside frameworks and products" },
+    description: {
+      pt: "Módulos nativos de IA e MCP no framework open source Arqel para Laravel, e ofertas de IA para PMEs: atendente no WhatsApp, agendamento inteligente e conectores MCP para sistemas próprios.",
+      en: "Native AI and MCP modules in the open-source Arqel framework for Laravel, plus AI offerings for SMBs: WhatsApp assistant, smart scheduling and MCP connectors for in-house systems.",
+    },
+    tools: ["Laravel", "PHP", "React", "OpenAI API", "Claude API"],
+  },
+  {
+    title: { pt: "IA no fluxo de trabalho", en: "AI in the daily workflow" },
+    description: {
+      pt: "Desenvolvimento com Claude Code (arquitetura, refatoração, testes e revisão), protótipos navegáveis de propostas com Claude Design e otimização de sites para buscadores de IA (GEO).",
+      en: "Development with Claude Code (architecture, refactoring, testing and review), clickable proposal prototypes with Claude Design and website optimisation for AI search engines (GEO).",
+    },
+    tools: ["Claude Code", "Claude Design", "ChatGPT", "Gemini", "GEO"],
+  },
+];
+
 export type Project = {
   title: string;
   kind: L;
@@ -329,6 +365,7 @@ export const experiences: Experience[] = [
       { pt: "Criação de produtos próprios: Social Hub (MCP para redes sociais), EasyDev Hub (gestão + Stripe), Liberi, DiAna ShowTrack e o framework open source Arqel", en: "Built own products: Social Hub (MCP for social media), EasyDev Hub (management + Stripe), Liberi, DiAna ShowTrack and the open-source Arqel framework" },
       { pt: "Entrega de sites e sistemas para clientes de construção, contabilidade e serviços, com SEO, analytics e hospedagem gerenciada", en: "Delivered websites and systems for construction, accounting and services clients, with SEO, analytics and managed hosting" },
       { pt: "Desenho de ofertas de IA para PMEs: agente de atendimento no WhatsApp, agendamento inteligente e conectores MCP", en: "Designed AI offerings for SMBs: WhatsApp customer-service agent, smart scheduling and MCP connectors" },
+      { pt: "Desenvolvimento assistido por IA no dia a dia com Claude Code, mantendo revisão, testes e padrões de código", en: "Daily AI-assisted development with Claude Code, keeping review, testing and code standards" },
       { pt: "Responsável de ponta a ponta: comercial, escopo, arquitetura, desenvolvimento, deploy e suporte", en: "End-to-end ownership: sales, scoping, architecture, development, deployment and support" },
     ],
     stacks: ["Laravel", "Livewire", "React", "Next.js", "React Native", "Node.js", "NestJS", "MCP", "Stripe", "Docker", "AWS", "MySQL", "PostgreSQL", "Redis"],
@@ -418,7 +455,7 @@ export const skillGroups: { title: L; skills: string[] }[] = [
   },
   {
     title: { pt: "IA aplicada", en: "Applied AI" },
-    skills: ["MCP (Model Context Protocol)", "Claude API", "OpenAI API", "AI Agents", "RAG", "Workflow automation", "AI-assisted development"],
+    skills: ["Claude Code", "Claude API (Anthropic)", "Claude Design", "OpenAI API / ChatGPT", "Gemini", "MCP (Model Context Protocol)", "MCP SDK (TypeScript)", "AI Agents", "Human-in-the-loop", "RAG", "Prompt engineering", "GEO (AI search optimization)", "Workflow automation"],
   },
   {
     title: { pt: "Dados, Cloud & DevOps", en: "Data, Cloud & DevOps" },
@@ -460,6 +497,6 @@ export const languages: { name: L; level: L }[] = [
 ];
 
 export const cvSummary: L = {
-  pt: "Engenheiro de Software Full Stack Sênior com 7+ anos de experiência em PHP/Laravel, Python/FastAPI, Vue.js, React/Next.js, Node.js e AWS, incluindo 2 anos liderando um time de 4 a 5 desenvolvedores na Onfly. Fundador da EasyDev, onde construí produtos SaaS, sistemas sob medida e integrações de IA (agentes, automações e servidores MCP). Perfil hands-on, com visão de negócio construída em 10+ anos de compras e vendas na indústria.",
-  en: "Senior Full Stack Software Engineer with 7+ years of experience in PHP/Laravel, Python/FastAPI, Vue.js, React/Next.js, Node.js and AWS, including 2 years leading a team of 4–5 developers at Onfly. Founder of EasyDev, where I built SaaS products, custom systems and AI integrations (agents, automations and MCP servers). Hands-on profile with business sense built over 10+ years in purchasing and sales in industry.",
+  pt: "Engenheiro de Software Full Stack Sênior com 7+ anos de experiência em PHP/Laravel, Python/FastAPI, Vue.js, React/Next.js, Node.js e AWS, incluindo 2 anos liderando um time de 4 a 5 desenvolvedores na Onfly. Fundador da EasyDev, onde construí produtos SaaS, sistemas sob medida e integrações de IA (agentes, automações e servidores MCP com Claude, OpenAI e Gemini), com desenvolvimento assistido por IA no dia a dia via Claude Code. Perfil hands-on, com visão de negócio construída em 10+ anos de compras e vendas na indústria.",
+  en: "Senior Full Stack Software Engineer with 7+ years of experience in PHP/Laravel, Python/FastAPI, Vue.js, React/Next.js, Node.js and AWS, including 2 years leading a team of 4–5 developers at Onfly. Founder of EasyDev, where I built SaaS products, custom systems and AI integrations (agents, automations and MCP servers with Claude, OpenAI and Gemini), with daily AI-assisted development using Claude Code. Hands-on profile with business sense built over 10+ years in purchasing and sales in industry.",
 };

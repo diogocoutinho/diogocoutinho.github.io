@@ -9,6 +9,7 @@ import Section from "@/components/Section";
 import { useScopedI18n, useCurrentLocale } from "@/locales/client";
 import {
   about,
+  aiExperience,
   contact,
   educations,
   experiences,
@@ -132,6 +133,25 @@ export default function Home() {
                 </div>
               );
             })}
+          </div>
+        </Section>
+
+        {/* IA na prática */}
+        <Section id="ai" title={t("ai")} lead={t("aiLead")}>
+          <div className="grid md:grid-cols-2 gap-6">
+            {aiExperience.map((item) => (
+              <article key={item.title.en} className="bg-surface border border-line rounded-xl p-6 md:p-7 flex flex-col">
+                <h3 className="text-lg font-semibold text-ink mb-2">{tr(item.title, locale)}</h3>
+                <p className="text-[15px] text-ink/85 leading-relaxed mb-4">{tr(item.description, locale)}</p>
+                <div className="flex flex-wrap gap-1.5 mt-auto">
+                  {item.tools.map((tool) => (
+                    <span key={tool} className="px-2.5 py-1 rounded-md border border-line bg-bg text-xs font-medium text-muted">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
           </div>
         </Section>
 
