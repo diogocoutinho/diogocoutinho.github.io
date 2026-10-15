@@ -2,46 +2,70 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-@layer utilities {
-  .glass {
-    @apply bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg border border-slate-200 dark:border-slate-800;
-  }
-  
-  .glass-card {
-    @apply bg-white/80 dark:bg-slate-900/60 backdrop-blur-xl border border-slate-200/60 dark:border-slate-700/60 shadow-lg;
-  }
-
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-500;
-  }
+/* Identidade compartilhada com a EasyDev: grafite, dourado e off-white. */
+:root {
+  --bg: #fafafa;
+  --surface: #ffffff;
+  --ink: #1c1c1c;
+  --muted: #5d5a54;
+  --line: #e6e2d8;
+  --accent: #8c6d14; /* dourado escurecido para texto legível no claro */
+  --gold: #d4af37;
+  --on-gold: #1c1c1c;
 }
 
-* {
-  @apply transition-colors duration-200;
+.dark {
+  --bg: #141414;
+  --surface: #1c1c1c;
+  --ink: #f2efe8;
+  --muted: #a7a297;
+  --line: #2d2b27;
+  --accent: #d4af37;
+  --gold: #d4af37;
+  --on-gold: #141414;
 }
 
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-gold: var(--gold);
+  --color-on-gold: var(--on-gold);
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+html,
 body {
-  /* Background handled by Background.tsx and layout */
+  background: var(--bg);
+  color: var(--ink);
 }
 
-/* Custom Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+html {
+  scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar-track {
-  @apply bg-transparent;
+h1,
+h2,
+h3 {
+  font-family: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  text-wrap: balance;
 }
 
-::-webkit-scrollbar-thumb {
-  @apply bg-slate-300 dark:bg-slate-700 rounded-full border-4 border-transparent bg-clip-content;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-slate-400 dark:bg-slate-600;
-}
-
-/* Selection styles */
 ::selection {
-  @apply bg-blue-500/30 text-blue-900 dark:text-blue-100;
+  background: color-mix(in srgb, var(--gold) 35%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
