@@ -1,150 +1,79 @@
 "use client";
 
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Languages,
-  Github,
-  Linkedin
-} from "lucide-react";
-import { useScopedI18n } from "@/locales/client";
-import { motion } from "framer-motion";
+import { Mail, MessageCircle, MapPin, Linkedin, Github, Briefcase, Rocket, ArrowUpRight } from "lucide-react";
+import { useCurrentLocale, useScopedI18n } from "@/locales/client";
+import { contact, tr } from "@/data/profile";
 
 export default function Contact() {
-  const scopedT = useScopedI18n("Contact");
+  const locale = useCurrentLocale();
+  const t = useScopedI18n("labels");
 
-  const contactInfo = [
-    {
-      icon: <Mail className="h-6 w-6" />,
-      label: scopedT("contactInfo.email"),
-      value: "diogo.coutinho.ads@gmail.com",
-      href: "mailto:diogo.coutinho.ads@gmail.com",
-    },
-    {
-      icon: <Phone className="h-6 w-6" />,
-      label: scopedT("contactInfo.phone"),
-      value: "+55 31 9 9278-4329",
-      href: "tel:+5531992784329",
-    },
-    {
-      icon: <MapPin className="h-6 w-6" />,
-      label: scopedT("contactInfo.location"),
-      value: "Ibirité, MG",
-    },
-  ];
-
-  const languages = [
-    { name: scopedT("languages.pt"), level: scopedT("languages.native") },
-    { name: scopedT("languages.en"), level: scopedT("languages.intermediate") },
-    { name: scopedT("languages.es"), level: scopedT("languages.basic") },
-  ];
-
-  const socialLinks = [
-    {
-      name: "GitHub",
-      href: "https://github.com/diogocoutinho",
-      icon: <Github className="h-5 w-5" />
-    },
-    {
-      name: "LinkedIn",
-      href: "https://linkedin.com/in/diogoccoutinho",
-      icon: <Linkedin className="h-5 w-5" />
-    }
+  const channels = [
+    { icon: <Mail className="h-5 w-5" />, label: t("email"), value: contact.email, href: `mailto:${contact.email}` },
+    { icon: <MessageCircle className="h-5 w-5" />, label: t("whatsapp"), value: contact.phone, href: contact.whatsapp },
+    { icon: <MapPin className="h-5 w-5" />, label: t("location"), value: tr(contact.location, locale) },
   ];
 
   return (
-    <div className="glass-card rounded-2xl p-8 md:p-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div className="space-y-8">
-          <div>
-            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6 border-b border-slate-200 dark:border-slate-700 pb-2">
-              {scopedT("contactInfoTitle")}
-            </h3>
-            <div className="space-y-6">
-              {contactInfo.map((item, index) => (
-                <motion.div
-                  key={item.label}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="flex items-center space-x-4 group"
-                >
-                  <div className="p-3 bg-blue-50 dark:bg-slate-800 rounded-lg text-blue-600 dark:text-blue-400 group-hover:bg-blue-100 dark:group-hover:bg-slate-700 transition-colors">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                      {item.label}
-                    </p>
-                    {item.href ? (
-                      <a
-                        href={item.href}
-                        className="text-lg font-medium text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                      >
-                        {item.value}
-                      </a>
-                    ) : (
-                      <p className="text-lg font-medium text-slate-900 dark:text-white">
-                        {item.value}
-                      </p>
-                    )}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mt-8 mb-6 border-b border-slate-200 dark:border-slate-700 pb-2">
-              {scopedT("social.title")}
-            </h3>
-            <div className="flex gap-4">
-              {socialLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-900 dark:text-white font-medium hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-all duration-300 transform hover:scale-105"
-                >
-                  {link.icon}
-                  <span>{link.name}</span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <h3 className="text-2xl font-semibold text-slate-900 dark:text-white mb-6 border-b border-slate-200 dark:border-slate-700 pb-2">
-            {scopedT("languages.title")}
+    <div className="grid lg:grid-cols-5 gap-6">
+      <div className="lg:col-span-3 grid sm:grid-cols-2 gap-6">
+        <a
+          href={`mailto:${contact.email}?subject=${encodeURIComponent(locale === "en-US" ? "Role opportunity" : "Oportunidade de vaga")}`}
+          className="glass-card rounded-2xl p-6 group hover:border-blue-400 dark:hover:border-blue-500 transition-colors"
+        >
+          <Briefcase className="w-8 h-8 text-blue-600 dark:text-blue-400 mb-4" />
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-1">
+            {t("hiring")}
+            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
           </h3>
-          <div className="space-y-4">
-            {languages.map((language, index) => (
-              <motion.div
-                key={language.name}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex items-center justify-between p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 hover:bg-white dark:hover:bg-slate-800 border border-transparent hover:border-slate-200 dark:hover:border-slate-700 transition-all shadow-sm"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                    <Languages className="h-5 w-5 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <span className="text-lg font-medium text-slate-900 dark:text-white">
-                    {language.name}
-                  </span>
-                </div>
-                <span className="px-3 py-1 text-sm font-semibold text-blue-600 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/20 rounded-full border border-blue-100 dark:border-blue-900/50">
-                  {language.level}
-                </span>
-              </motion.div>
-            ))}
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{t("hiringText")}</p>
+        </a>
+        <a
+          href={contact.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="glass-card rounded-2xl p-6 group hover:border-purple-400 dark:hover:border-purple-500 transition-colors"
+        >
+          <Rocket className="w-8 h-8 text-purple-600 dark:text-purple-400 mb-4" />
+          <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2 flex items-center gap-1">
+            {t("project")}
+            <ArrowUpRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+          </h3>
+          <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">{t("projectText")}</p>
+        </a>
+      </div>
+
+      <div className="lg:col-span-2 glass-card rounded-2xl p-6 space-y-5">
+        {channels.map((item) => (
+          <div key={item.label} className="flex items-center gap-4">
+            <div className="p-2.5 bg-blue-50 dark:bg-slate-800 rounded-lg text-blue-600 dark:text-blue-400">{item.icon}</div>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">{item.label}</p>
+              {item.href ? (
+                <a
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className="font-medium text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 break-all"
+                >
+                  {item.value}
+                </a>
+              ) : (
+                <p className="font-medium text-slate-900 dark:text-white">{item.value}</p>
+              )}
+            </div>
           </div>
+        ))}
+        <div className="flex flex-wrap gap-3 pt-2">
+          <a href={contact.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-sm font-medium hover:bg-blue-600 hover:text-white transition-colors">
+            <Linkedin className="h-4 w-4" /> LinkedIn
+          </a>
+          <a href={contact.github} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-sm font-medium hover:bg-blue-600 hover:text-white transition-colors">
+            <Github className="h-4 w-4" /> GitHub
+          </a>
+          <a href={contact.agency} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-sm font-medium hover:bg-blue-600 hover:text-white transition-colors">
+            <ArrowUpRight className="h-4 w-4" /> {t("agency")}
+          </a>
         </div>
       </div>
     </div>
