@@ -239,6 +239,7 @@ export const projects: Project[] = [
       { pt: "Publicação, treinamento do cliente e Google Perfil da Empresa", en: "Launch, client training and Google Business Profile" },
     ],
     technologies: ["Claude", "Wix", "SEO local", "Google Business Profile"],
+    imageUrl: "/ecorise.jpg",
     liveUrl: "https://www.ecorisesolucoesamb.com/",
     client: true,
   },
