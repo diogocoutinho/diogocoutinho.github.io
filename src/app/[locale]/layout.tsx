@@ -80,7 +80,7 @@ const personJsonLd = {
   address: { "@type": "PostalAddress", addressLocality: "Belo Horizonte", addressRegion: "MG", addressCountry: "BR" },
   worksFor: { "@type": "Organization", name: "EasyDev Soluções Digitais", url: "https://easydevsolucoes.com.br" },
   alumniOf: "Faculdade de Ciências Sociais Aplicadas de Belo Horizonte",
-  knowsAbout: ["Laravel", "PHP", "Python", "FastAPI", "AWS Lambda", "Vue.js", "React", "Next.js", "Node.js", "TypeScript", "Docker", "AWS", "Model Context Protocol", "AI agents"],
+  knowsAbout: ["Laravel", "PHP", "Python", "FastAPI", "AWS Lambda", "AWS API Gateway", "Amazon Cognito", "Amazon SQS", "Vue.js", "React", "Next.js", "Node.js", "TypeScript", "Docker", "AWS", "Model Context Protocol", "AI agents"],
   sameAs: ["https://www.linkedin.com/in/diogoccoutinho", "https://github.com/diogocoutinho", "https://easydevsolucoes.com.br"],
 };
 

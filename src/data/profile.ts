@@ -299,12 +299,12 @@ export const experiences: Experience[] = [
     },
     bullets: [
       { pt: "Conduzo a migração de arquitetura da plataforma de Filament/Livewire para Laravel 12 + Inertia + React + TypeScript", en: "Leading the platform's architecture migration from Filament/Livewire to Laravel 12 + Inertia + React + TypeScript" },
-      { pt: "Desenvolvimento de microsserviços e APIs em Python + FastAPI integrados à plataforma Laravel", en: "Building Python + FastAPI microservices and APIs integrated with the Laravel platform" },
-      { pt: "Serverless e infraestrutura na AWS: Lambda, Cognito, EC2, RDS, ElastiCache e S3/CloudFront, com deploys automatizados via GitHub Actions", en: "Serverless and infrastructure on AWS: Lambda, Cognito, EC2, RDS, ElastiCache and S3/CloudFront, with automated deployments via GitHub Actions" },
+      { pt: "Desenvolvimento do gateway de autenticação em Python + FastAPI que centraliza o login de todas as personas da plataforma e direciona cada usuário ao sistema certo conforme o seu perfil de acesso", en: "Building the Python + FastAPI authentication gateway that centralises sign-in for every persona on the platform and routes each user to the right system based on their access profile" },
+      { pt: "Arquitetura serverless na AWS com API Gateway, Lambda, Cognito, SQS e S3, além de EC2, RDS e ElastiCache, com deploys automatizados via GitHub Actions", en: "Serverless architecture on AWS with API Gateway, Lambda, Cognito, SQS and S3, plus EC2, RDS and ElastiCache, with automated deployments via GitHub Actions" },
       { pt: "Autor da documentação técnica do produto (40+ documentos de arquitetura, domínio e casos de uso)", en: "Author of the product's technical documentation (40+ architecture, domain and use-case documents)" },
       { pt: "Levantamento de requisitos com o negócio, relatórios de KPIs e revisão de código do time", en: "Requirements gathering with the business, KPI reporting and team code review" },
     ],
-    stacks: ["PHP", "Laravel 12", "Python", "FastAPI", "Inertia.js", "React", "TypeScript", "Vue.js", "PostgreSQL", "Redis", "AWS Lambda", "AWS Cognito", "Docker", "GitHub Actions"],
+    stacks: ["PHP", "Laravel 12", "Python", "FastAPI", "Inertia.js", "React", "TypeScript", "Vue.js", "PostgreSQL", "Redis", "AWS API Gateway", "AWS Lambda", "AWS Cognito", "AWS SQS", "AWS S3", "Docker", "GitHub Actions"],
   },
   {
     company: "EasyDev Soluções Digitais",
@@ -412,7 +412,7 @@ export const skillGroups: { title: L; skills: string[] }[] = [
   },
   {
     title: { pt: "Dados, Cloud & DevOps", en: "Data, Cloud & DevOps" },
-    skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB", "Typesense", "Docker", "CI/CD", "GitHub Actions", "AWS (Lambda, Cognito, EC2, RDS, S3)", "Serverless", "Linux", "Nginx"],
+    skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB", "Typesense", "Docker", "CI/CD", "GitHub Actions", "AWS (API Gateway, Lambda, Cognito, SQS, S3, EC2, RDS)", "Serverless", "SSO / Centralized authentication", "Linux", "Nginx"],
   },
   {
     title: { pt: "Integrações & Produto", en: "Integrations & Product" },
