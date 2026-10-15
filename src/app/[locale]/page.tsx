@@ -168,8 +168,15 @@ export default function Home() {
         {/* Projects */}
         <Section id="projects" title={t("projects")}>
           <p className="text-center text-slate-600 dark:text-slate-400 max-w-2xl mx-auto -mt-8 mb-12">{t("projectsLead")}</p>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-5">{t("productsTitle")}</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.map((project) => (
+            {projects.filter((p) => !p.client).map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mt-14 mb-5">{t("clientsTitle")}</h3>
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {projects.filter((p) => p.client).map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>

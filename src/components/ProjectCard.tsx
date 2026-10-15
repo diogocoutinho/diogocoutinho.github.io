@@ -20,7 +20,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       transition={{ duration: 0.4 }}
       className="glass-card rounded-2xl overflow-hidden group flex flex-col h-full"
     >
-      {imageUrl && (
+      {imageUrl ? (
         <div className="relative h-48 overflow-hidden">
           <Image
             src={imageUrl}
@@ -29,6 +29,14 @@ export default function ProjectCard({ project }: { project: Project }) {
             className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
           />
         </div>
+      ) : (
+        project.client && liveUrl && (
+          <div className="h-48 flex items-center justify-center bg-gradient-to-br from-emerald-600 to-teal-800 text-white px-6 text-center">
+            <span className="text-lg font-semibold tracking-wide break-all">
+              {new URL(liveUrl).hostname.replace(/^www\./, "")}
+            </span>
+          </div>
+        )
       )}
 
       <div className="p-6 md:p-7 flex flex-col flex-1">

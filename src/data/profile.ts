@@ -41,15 +41,15 @@ export const hero = {
 
 export const stats: { value: string; label: L }[] = [
   { value: "7+", label: { pt: "anos desenvolvendo software", en: "years building software" } },
-  { value: "2", label: { pt: "anos liderando time de dev (Onfly)", en: "years leading a dev team (Onfly)" } },
+  { value: "4–5", label: { pt: "devs liderados na Onfly", en: "developers led at Onfly" } },
   { value: "6", label: { pt: "produtos próprios em produção/beta", en: "own products in production/beta" } },
   { value: "20+", label: { pt: "pacotes open source (Arqel)", en: "open-source packages (Arqel)" } },
 ];
 
 export const about: L[] = [
   {
-    pt: "Sou engenheiro de software full stack com foco em back-end PHP/Laravel e front-end Vue e React. Desde 2018 desenvolvo plataformas de streaming, sistemas de gestão, SaaS B2B e aplicativos mobile — e desde 2021 também lidero pessoas: na Onfly (travel & expense tech) fui líder do time de desenvolvimento, conduzindo code review, 1:1s, distribuição de demandas e especificação de funcionalidades com PO e PM.",
-    en: "I'm a full stack software engineer focused on PHP/Laravel back-ends and Vue and React front-ends. Since 2018 I've built streaming platforms, management systems, B2B SaaS and mobile apps — and since 2021 I've also led people: at Onfly (travel & expense tech) I was the development team lead, running code reviews, 1:1s, work allocation and feature specification with PO and PM.",
+    pt: "Sou engenheiro de software full stack com foco em back-end PHP/Laravel e front-end Vue e React. Desde 2018 desenvolvo plataformas de streaming, sistemas de gestão, SaaS B2B e aplicativos mobile — e desde 2021 também lidero pessoas: na Onfly (travel & expense tech) liderei um time de 4 a 5 desenvolvedores por quase 2 anos, conduzindo code review, 1:1s, distribuição de demandas e especificação de funcionalidades com PO e PM.",
+    en: "I'm a full stack software engineer focused on PHP/Laravel back-ends and Vue and React front-ends. Since 2018 I've built streaming platforms, management systems, B2B SaaS and mobile apps — and since 2021 I've also led people: at Onfly (travel & expense tech) I led a team of 4–5 developers for almost 2 years, running code reviews, 1:1s, work allocation and feature specification with PO and PM.",
   },
   {
     pt: "Antes da tecnologia, passei mais de 10 anos em compras, vendas e estoque na indústria. Isso me dá algo que faz diferença em projeto: entendo o negócio por trás do código, falo a língua do cliente e priorizo o que gera retorno.",
@@ -126,6 +126,7 @@ export type Project = {
   liveUrl?: string;
   githubUrl?: string;
   featured?: boolean;
+  client?: boolean;
 };
 
 export const projects: Project[] = [
@@ -140,6 +141,7 @@ export const projects: Project[] = [
       { pt: "Facebook, Instagram, Threads, TikTok, LinkedIn, Meta Ads e WhatsApp Business", en: "Facebook, Instagram, Threads, TikTok, LinkedIn, Meta Ads and WhatsApp Business" },
       { pt: "Memória de marca por conta, modo agência com fluxo de aprovação", en: "Per-account brand memory, agency mode with approval workflow" },
       { pt: "Aprendizado por métricas: o que funciona em cada conta", en: "Metrics-driven learning: what works on each account" },
+      { pt: "Em homologação no App Review da Meta", en: "Currently in Meta App Review" },
     ],
     technologies: ["MCP", "Node.js", "TypeScript", "Meta Graph API", "WhatsApp Cloud API", "OAuth"],
     featured: true,
@@ -217,6 +219,21 @@ export const projects: Project[] = [
     liveUrl: "https://diogocoutinho.github.io/vue-international-phone/",
   },
   {
+    title: "EcoRise Soluções Ambientais",
+    kind: { pt: "Cliente · soluções ambientais", en: "Client · environmental services" },
+    summary: {
+      pt: "Site e presença digital para empresa de soluções ambientais. Na proposta, o cliente navegou por três direções visuais completas, prototipadas com IA, antes de escolher.",
+      en: "Website and digital presence for an environmental services company. In the proposal, the client browsed three complete visual directions, prototyped with AI, before choosing.",
+    },
+    highlights: [
+      { pt: "Processo de proposta com protótipos navegáveis gerados com IA", en: "Proposal process with clickable AI-generated prototypes" },
+      { pt: "Publicação, treinamento do cliente e Google Perfil da Empresa", en: "Launch, client training and Google Business Profile" },
+    ],
+    technologies: ["Claude", "Wix", "SEO local", "Google Business Profile"],
+    liveUrl: "https://www.ecorisesolucoesamb.com/",
+    client: true,
+  },
+  {
     title: "Escaala Brasil",
     kind: { pt: "Cliente · construção modular", en: "Client · modular construction" },
     summary: {
@@ -229,6 +246,7 @@ export const projects: Project[] = [
     ],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "GA4", "GTM", "Meta Pixel"],
     imageUrl: "/escaala.png",
+    client: true,
     liveUrl: "https://escaalabrasil.com.br/",
   },
   {
@@ -241,6 +259,7 @@ export const projects: Project[] = [
     highlights: [{ pt: "Deploy contínuo com GitHub Actions", en: "Continuous deployment with GitHub Actions" }],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "GitHub Actions"],
     imageUrl: "/gcdigicont.png",
+    client: true,
     liveUrl: "https://gcdigicont.com.br/",
   },
   {
@@ -253,6 +272,7 @@ export const projects: Project[] = [
     highlights: [{ pt: "Hospedagem e manutenção contínua", en: "Ongoing hosting and maintenance" }],
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "GitHub Actions"],
     imageUrl: "/kenny.png",
+    client: true,
     liveUrl: "https://kennygalmeida.com.br/",
   },
 ];
@@ -336,7 +356,7 @@ export const experiences: Experience[] = [
       en: "Corporate travel & expense management scale-up.",
     },
     bullets: [
-      { pt: "Liderança do time de desenvolvimento: cerimônias Scrum, distribuição de demandas e bugs, 1:1s e acompanhamento de carreira", en: "Led the development team: Scrum ceremonies, work and bug allocation, 1:1s and career follow-up" },
+      { pt: "Liderança de um time de 4 a 5 desenvolvedores: cerimônias Scrum, distribuição de demandas e bugs, 1:1s e acompanhamento de carreira", en: "Led a team of 4–5 developers: Scrum ceremonies, work and bug allocation, 1:1s and career follow-up" },
       { pt: "Especificação de funcionalidades junto a PO e PM, traduzindo necessidades de negócio em entregas", en: "Specified features with PO and PM, turning business needs into deliverables" },
       { pt: "Revisão de código e padrões técnicos em plataforma Laravel/Lumen + Vue.js e app Flutter", en: "Code review and technical standards across a Laravel/Lumen + Vue.js platform and a Flutter app" },
       { pt: "Atuação hands-on no código e apoio a outros times em entregas críticas", en: "Hands-on coding and support to other teams on critical deliveries" },
@@ -429,6 +449,6 @@ export const languages: { name: L; level: L }[] = [
 ];
 
 export const cvSummary: L = {
-  pt: "Engenheiro de Software Full Stack Sênior com 7+ anos de experiência em PHP/Laravel, Vue.js, React/Next.js e Node.js, incluindo 2 anos como líder de time de desenvolvimento na Onfly. Fundador da EasyDev, onde construí produtos SaaS, sistemas sob medida e integrações de IA (agentes, automações e servidores MCP). Perfil hands-on, com visão de negócio construída em 10+ anos de compras e vendas na indústria.",
-  en: "Senior Full Stack Software Engineer with 7+ years of experience in PHP/Laravel, Vue.js, React/Next.js and Node.js, including 2 years as development team lead at Onfly. Founder of EasyDev, where I built SaaS products, custom systems and AI integrations (agents, automations and MCP servers). Hands-on profile with business sense built over 10+ years in purchasing and sales in industry.",
+  pt: "Engenheiro de Software Full Stack Sênior com 7+ anos de experiência em PHP/Laravel, Vue.js, React/Next.js e Node.js, incluindo 2 anos liderando um time de 4 a 5 desenvolvedores na Onfly. Fundador da EasyDev, onde construí produtos SaaS, sistemas sob medida e integrações de IA (agentes, automações e servidores MCP). Perfil hands-on, com visão de negócio construída em 10+ anos de compras e vendas na indústria.",
+  en: "Senior Full Stack Software Engineer with 7+ years of experience in PHP/Laravel, Vue.js, React/Next.js and Node.js, including 2 years leading a team of 4–5 developers at Onfly. Founder of EasyDev, where I built SaaS products, custom systems and AI integrations (agents, automations and MCP servers). Hands-on profile with business sense built over 10+ years in purchasing and sales in industry.",
 };

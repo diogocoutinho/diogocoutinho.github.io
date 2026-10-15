@@ -14,6 +14,8 @@ export default {
     servicesLead: "Para empresas contratando um engenheiro sênior e para negócios que precisam de um parceiro técnico.",
     projects: "Cases e produtos",
     projectsLead: "Produtos próprios, open source e entregas para clientes.",
+    productsTitle: "Produtos e open source",
+    clientsTitle: "Clientes",
     experience: "Experiência profissional",
     skills: "Stack e competências",
     education: "Formação",

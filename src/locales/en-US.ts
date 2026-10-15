@@ -14,6 +14,8 @@ export default {
     servicesLead: "For companies hiring a senior engineer and for businesses that need a technical partner.",
     projects: "Case studies & products",
     projectsLead: "Own products, open source and client work.",
+    productsTitle: "Products & open source",
+    clientsTitle: "Clients",
     experience: "Professional experience",
     skills: "Stack & skills",
     education: "Education",
