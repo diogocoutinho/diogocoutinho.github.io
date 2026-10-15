@@ -1,49 +1,26 @@
-"use client";
-
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
 import clsx from "clsx";
 
 interface SectionProps {
   id: string;
   children: ReactNode;
   title?: string;
+  lead?: string;
   className?: string;
 }
 
-export default function Section({ id, children, title, className }: SectionProps) {
+export default function Section({ id, children, title, lead, className }: SectionProps) {
   return (
-    <section
-      id={id}
-      className={clsx(
-        "py-24 px-4 sm:px-6 lg:px-8 relative scroll-mt-16",
-        className
-      )}
-    >
-      <div className="max-w-7xl mx-auto">
+    <section id={id} className={clsx("py-20 md:py-24 px-4 sm:px-6 lg:px-8 scroll-mt-20 border-t border-line", className)}>
+      <div className="max-w-6xl mx-auto">
         {title && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-16 text-center"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 inline-block pb-2">
-              {title}
-            </h2>
-            <div className="h-1.5 w-24 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto mt-2 rounded-full" />
-          </motion.div>
+          <header className="mb-10 md:mb-12 max-w-2xl">
+            <div className="h-0.5 w-10 bg-gold mb-5" />
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-ink">{title}</h2>
+            {lead && <p className="mt-3 text-base md:text-lg text-muted leading-relaxed">{lead}</p>}
+          </header>
         )}
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          {children}
-        </motion.div>
+        {children}
       </div>
     </section>
   );

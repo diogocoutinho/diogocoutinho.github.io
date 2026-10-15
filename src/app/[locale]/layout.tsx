@@ -1,14 +1,14 @@
 
 import * as React from "react";
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "../globals.css";
 import { Providers } from "../providers";
 import { I18nProviderClient } from "@/locales/client";
-import Background from "@/components/Background";
 import Navbar from "@/components/Navbar";
 
-const outfit = Outfit({ subsets: ["latin"] });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 const SITE = "https://diogocoutinho.github.io";
 
@@ -98,7 +98,7 @@ export default async function LocaleLayout({
   const { locale } = await params;
 
   return (
-    <div className={`scroll-smooth ${outfit.className} bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 min-h-screen relative`}>
+    <div className={`${outfit.variable} ${inter.variable} font-sans antialiased bg-bg text-ink min-h-screen`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
@@ -106,10 +106,7 @@ export default async function LocaleLayout({
       <I18nProviderClient locale={locale}>
         <Providers>
           <Navbar />
-          <Background />
-          <div className="relative z-10 flex flex-col min-h-screen">
-            {children}
-          </div>
+          <div className="flex flex-col min-h-screen">{children}</div>
         </Providers>
       </I18nProviderClient>
     </div>

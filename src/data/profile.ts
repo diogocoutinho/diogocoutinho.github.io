@@ -29,7 +29,10 @@ export const hero = {
     pt: "Engenheiro de Software Full Stack Sênior & Tech Lead",
     en: "Senior Full Stack Software Engineer & Tech Lead",
   },
-  stack: "Laravel · PHP · Python/FastAPI · Vue · React/Next.js · Node.js · AWS · IA aplicada",
+  stack: {
+    pt: "Laravel · PHP · Python/FastAPI · Vue · React/Next.js · Node.js · AWS · IA aplicada",
+    en: "Laravel · PHP · Python/FastAPI · Vue · React/Next.js · Node.js · AWS · Applied AI",
+  },
   pitch: {
     pt: "Construo produtos web e SaaS que viram resultado de negócio: do back-end em Laravel e Python ao front-end em Vue/React, com integrações de IA (agentes, automações e servidores MCP). 7+ anos entregando software, liderança de time em scale-up e fundador da EasyDev.",
     en: "I build web products and SaaS that turn into business results: from Laravel and Python back-ends to Vue/React front-ends, with AI integrations (agents, automations and MCP servers). 7+ years shipping software, team lead at a scale-up and founder of EasyDev.",
@@ -38,6 +41,12 @@ export const hero = {
   ctaSecondary: { pt: "Ver cases", en: "See case studies" },
   ctaCv: { pt: "Baixar currículo", en: "Download résumé" },
 };
+
+export const proofPoints: L[] = [
+  { pt: "Liderou time de 4 a 5 devs na Onfly", en: "Led a 4–5 developer team at Onfly" },
+  { pt: "Arquitetura e autenticação centralizada em fintech", en: "Architecture and centralised auth at a fintech" },
+  { pt: "Produtos próprios com IA e MCP", en: "Own AI and MCP products" },
+];
 
 export const stats: { value: string; label: L }[] = [
   { value: "7+", label: { pt: "anos desenvolvendo software", en: "years building software" } },
