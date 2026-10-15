@@ -38,6 +38,7 @@ export default function Navbar() {
   const navLinks = [
     { href: "#about", label: t("about") },
     { href: "#services", label: t("services") },
+    { href: "#ai", label: t("ai") },
     { href: "#projects", label: t("projects") },
     { href: "#experience", label: t("experience") },
     { href: "#skills", label: t("skills") },
@@ -58,7 +59,7 @@ export default function Navbar() {
           <span className="text-gold">.</span>
         </a>
 
-        <div className="hidden lg:flex items-center gap-7">
+        <div className="hidden lg:flex items-center gap-6">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="text-sm text-muted hover:text-ink transition-colors">
               {link.label}

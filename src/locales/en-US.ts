@@ -2,6 +2,7 @@ export default {
   navigation: {
     about: "About",
     services: "Services",
+    ai: "AI",
     projects: "Work",
     experience: "Experience",
     skills: "Stack",
@@ -12,6 +13,8 @@ export default {
     about: "About me",
     services: "How I can help",
     servicesLead: "For companies hiring a senior engineer and for businesses that need a technical partner.",
+    ai: "AI in practice",
+    aiLead: "What I have built with AI and the tools I use every day.",
     projects: "Case studies & products",
     projectsLead: "Own products, open source and client work.",
     productsTitle: "Products & open source",
