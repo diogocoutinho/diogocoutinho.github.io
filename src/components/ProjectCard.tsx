@@ -1,91 +1,110 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Sparkles } from "lucide-react";
+import { Project, tr } from "@/data/profile";
+import { useCurrentLocale, useScopedI18n } from "@/locales/client";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  technologies: string[];
-  githubUrl?: string;
-  liveUrl: string | null;
-  imageUrl?: string | null;
-}
+export default function ProjectCard({ project }: { project: Project }) {
+  const locale = useCurrentLocale();
+  const t = useScopedI18n("labels");
+  const { title, kind, summary, highlights, technologies, imageUrl, liveUrl, githubUrl, featured } = project;
 
-export default function ProjectCard({
-  title,
-  description,
-  technologies,
-  githubUrl,
-  liveUrl,
-  imageUrl,
-}: ProjectCardProps) {
   return (
-    <motion.div
-      whileHover={{ y: -10 }}
-      initial={{ opacity: 0, scale: 0.9 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+    <motion.article
+      whileHover={{ y: -6 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
       className="glass-card rounded-2xl overflow-hidden group flex flex-col h-full"
     >
-      <div className="relative h-64 overflow-hidden">
-        <Image
-          src={imageUrl || "/file.svg"}
-          alt={title}
-          fill
-          className="object-cover group-hover:scale-110 transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-      </div>
+      {imageUrl ? (
+        <div className="relative h-48 overflow-hidden">
+          <Image
+            src={imageUrl}
+            alt={title}
+            fill
+            className="object-cover object-top group-hover:scale-105 transition-transform duration-700"
+          />
+        </div>
+      ) : (
+        project.client && liveUrl && (
+          <div className="h-48 flex items-center justify-center bg-gradient-to-br from-emerald-600 to-teal-800 text-white px-6 text-center">
+            <span className="text-lg font-semibold tracking-wide break-all">
+              {new URL(liveUrl).hostname.replace(/^www\./, "")}
+            </span>
+          </div>
+        )
+      )}
 
-      <div className="p-6 md:p-8 flex flex-col flex-1">
-        <h3 className="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-white dark:to-blue-200">
-          {title}
-        </h3>
+      <div className="p-6 md:p-7 flex flex-col flex-1">
+        <div className="flex items-center gap-2 mb-2 flex-wrap">
+          <span className="text-xs font-semibold uppercase tracking-wide text-blue-600 dark:text-blue-400">
+            {tr(kind, locale)}
+          </span>
+          {featured && (
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-semibold bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-300">
+              <Sparkles className="w-3 h-3" />
+              {t("featured")}
+            </span>
+          )}
+        </div>
 
-        <p className="text-slate-600 dark:text-slate-300 mb-6 line-clamp-3 text-sm leading-relaxed flex-1">
-          {description}
+        <h3 className="text-xl font-bold mb-3 text-slate-900 dark:text-white">{title}</h3>
+
+        <p className="text-slate-600 dark:text-slate-300 mb-4 text-sm leading-relaxed">
+          {tr(summary, locale)}
         </p>
 
-        <div className="flex flex-wrap gap-2 mb-6">
+        <ul className="space-y-1.5 mb-5 flex-1">
+          {highlights.map((h, i) => (
+            <li key={i} className="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-300">
+              <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
+              {tr(h, locale)}
+            </li>
+          ))}
+        </ul>
+
+        <div className="flex flex-wrap gap-1.5 mb-5">
           {technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 bg-slate-100 dark:bg-slate-800/80 rounded-full text-xs font-semibold text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+              className="px-2.5 py-1 bg-slate-100 dark:bg-slate-800/80 rounded-full text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
             >
               {tech}
             </span>
           ))}
         </div>
 
-        <div className="flex gap-4 pt-4 border-t border-slate-200 dark:border-slate-800 mt-auto">
-          {githubUrl && githubUrl !== "#" && (
-            <Link
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <Github className="w-5 h-5" />
-              Code
-            </Link>
-          )}
-          {liveUrl && (
-            <Link
-              href={liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              <ExternalLink className="w-5 h-5" />
-              Live Demo
-            </Link>
-          )}
-        </div>
+        {(liveUrl || githubUrl) && (
+          <div className="flex gap-5 pt-4 border-t border-slate-200 dark:border-slate-800 mt-auto">
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                <ExternalLink className="w-4 h-4" />
+                {t("visit")}
+              </a>
+            )}
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                {t("code")}
+              </a>
+            )}
+          </div>
+        )}
       </div>
-    </motion.div>
+    </motion.article>
   );
 }

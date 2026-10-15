@@ -15,18 +15,10 @@ Um portfólio moderno e responsivo desenvolvido com Next.js, TypeScript e Tailwi
 
 ## ✨ Funcionalidades
 
-- Design moderno e responsivo
-- Seções organizadas:
-  - Sobre Mim
-  - Experiência Profissional
-  - Educação
-  - Habilidades (categorizadas)
-  - Projetos
-  - Contato
-- Animações suaves
-- Modo escuro
-- Links para redes sociais
-- Formulário de contato
+- Bilíngue (PT-BR / EN-US) com SEO por idioma (Open Graph, `hreflang` e JSON-LD `Person`)
+- Seções: hero com proposta de valor, números, sobre, serviços, cases e produtos, experiência, stack, formação e contato com CTAs
+- Currículo em PDF gerado no navegador, em coluna única e legível por ATS, no idioma ativo
+- Modo escuro e animações com Framer Motion
 
 ## 🛠️ Instalação
 
@@ -87,12 +79,10 @@ src/
 
 ## 🎨 Personalização
 
-Para personalizar o portfólio:
+Todo o conteúdo (site e PDF) fica em um único arquivo: `src/data/profile.ts`. Cada texto tem as versões `{ pt, en }`.
+Os rótulos de interface ficam em `src/locales/pt-BR.ts` e `src/locales/en-US.ts`.
 
-1. Atualize as informações em `src/app/page.tsx`
-2. Modifique as cores no arquivo `tailwind.config.js`
-3. Adicione suas próprias imagens na pasta `public`
-4. Atualize os projetos em `src/app/page.tsx`
+O deploy é feito pelo GitHub Actions (`.github/workflows/deploy.yml`) a cada push na `main`.
 
 ## 📄 Licença
 
