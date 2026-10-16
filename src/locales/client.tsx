@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, ReactNode, useCallback, useContext } from "react";
+import { createContext, ReactNode, useCallback, useContext, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import ptBR from "./pt-BR";
 import enUS from "./en-US";
@@ -15,6 +15,10 @@ const LocaleContext = createContext<AppLocale>("pt-BR");
 
 export function I18nProviderClient({ locale, children }: { locale: string; children: ReactNode }) {
   const value: AppLocale = locale === "en-US" ? "en-US" : "pt-BR";
+  // Mantém o <html lang> certo ao trocar de idioma pela navegação do próprio site.
+  useEffect(() => {
+    document.documentElement.lang = value;
+  }, [value]);
   return <LocaleContext.Provider value={value}>{children}</LocaleContext.Provider>;
 }
 
