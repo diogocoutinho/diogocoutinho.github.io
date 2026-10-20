@@ -429,7 +429,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Copabo · Korbras · Casa das Correias",
-    position: { pt: "Comprador · Almoxarife · Auxiliar de Vendas", en: "Buyer · Warehouse Clerk · Sales Assistant" },
+    position: { pt: "Comprador · Almoxarife · Auxiliar de Serviços Gerais", en: "Buyer · Warehouse Clerk · General Assistant" },
     period: { pt: "2007 – 2018", en: "2007 – 2018" },
     location: { pt: "Belo Horizonte, MG", en: "Belo Horizonte, Brazil" },
     summary: {
